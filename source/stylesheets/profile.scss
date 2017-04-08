@@ -1,0 +1,69 @@
+@import "mix";
+
+
+.talent-detail {
+  .container {
+    width: 100%;
+
+    .profile-row {
+      align-items: stretch;
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+      @include bp('tablet') {
+        flex-direction: row;
+        height: 100vh;
+      }
+
+      .left-col {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+        @include bp('tablet') {
+          width: 60%;
+        }
+
+        .info-box {
+          width: 100%;
+
+          .bio {
+            margin: 0 auto;
+            max-width: 500px;
+          }
+        }
+      }
+
+      .right-col {
+        width: 100%;
+        @include bp('tablet') {
+          height: 100%;
+          width: 40%;
+        }
+
+        .main-image {
+          background: black;
+          height: 100%;
+          position: relative;
+          width: 100%;
+          @include bp('tablet') {
+            overflow: hidden;
+          }
+
+          img {
+            width: 100%;
+            @include bp('tablet') {
+              height: 200%;
+              object-fit: cover;
+              position: absolute;
+              top: -50%;
+              z-index: 10;
+            }
+          }
+        }
+      }
+    }
+  }
+}

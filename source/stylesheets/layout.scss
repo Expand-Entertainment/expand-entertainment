@@ -1,0 +1,26 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #fff;
+}
+
+a {
+  color: #000;
+
+  &:focus,
+  &:hover {
+    color: #ddd;
+  }
+}
+
+.info-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

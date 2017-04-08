@@ -1,0 +1,96 @@
+@import "mix";
+
+.content.talent {
+  display: flex;
+  flex-direction: column;
+  @include bp('tablet') {
+    flex-direction: row-reverse;
+  }
+
+  .right-toggle {
+    width: 100%;
+    @include bp('tablet') {
+      width: 20%;
+    }
+
+    #toggle {
+      border: 2px solid black;
+      cursor: pointer;
+      right: 10px;
+      top: 10px;
+    }
+  }
+
+  .container {
+    width: 100%;
+    @include bp('tablet') {
+      width: 80%;
+    }
+
+    .row {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .row.for-grid .grid-item {
+      height: 50%;
+      position: relative;
+      width: 50%;
+      @include bp('tablet') {
+        height: 50%;
+        width: 33.33%;
+      }
+      @include bp('desktop') {
+        height: 50%;
+        width: 25%;
+      }
+
+      h2 {
+        display: none;
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: 20;
+      }
+
+      .profile-image {
+        background: black;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+
+        img {
+          height: 200%;
+          left: -100%;
+          object-fit: cover;
+          position: absolute;
+          top: -50%;
+          z-index: 10;
+        }
+      }
+
+      &:hover {
+        h2 {
+          color: white;
+          display: block;
+        }
+
+        img {
+          opacity: .5;
+        }
+      }
+    }
+
+    .row.for-grid { display: none; }
+    .row.for-list { display: block; }
+
+    &.grid {
+      .row.for-grid { display: flex; }
+      .row.for-list { display: none; }
+    }
+  }
+}

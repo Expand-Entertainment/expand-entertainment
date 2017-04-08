@@ -1,0 +1,32 @@
+---
+title: Talent Landing
+---
+
+
+<div class="content talent">
+
+  <div class="right-toggle">
+    <div id="toggle" data-behavior="toggle-talent" class="toggle-talent">toggle</div>
+  </div>
+
+  <div class="container talent-container grid">
+    <div class="row for-grid">
+      <% data.website.profile.each do |id, profile| %>
+        <a href="profile/<%= profile['slug'] %>.html" class="grid-item">
+          <h2><%= profile['fullName'] %></h2>
+          <div class="profile-image">
+            <img src=<%= profile.mainPhoto['url'] %> />
+          </div>
+        </a>
+      <% end %>
+    </div>
+
+    <div class="row for-list">
+      <% data.website.profile.each do |id, profile| %>
+        <a href="profile/<%= profile['slug'] %>.html" class="grid-item">
+          <h2><%= profile['fullName'] %></h2>
+        </a>
+      <% end %>
+    </div>
+  </div>
+</div>
