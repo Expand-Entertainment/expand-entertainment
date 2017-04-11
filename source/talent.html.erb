@@ -11,20 +11,20 @@ title: Talent Landing
 
   <div class="container talent-container grid">
     <div class="row for-grid">
-      <% data.website.profile.each do |id, profile| %>
-        <a href="profile/<%= profile['slug'] %>.html" class="grid-item">
-          <h2><%= profile['fullName'] %></h2>
+      <% data.website.talentProfile.each do |id, talentProfile| %>
+        <a href="profile/<%= talentProfile['slug'] %>.html" class="grid-item">
+          <h2><%= talentProfile['fullName'] %></h2>
           <div class="profile-image">
-            <img src=<%= profile.mainPhoto['url'] %> />
+            <img src=<%= talentProfile.mainImage['url'] %> />
           </div>
         </a>
       <% end %>
     </div>
 
     <div class="row for-list">
-      <% data.website.profile.each do |id, profile| %>
-        <a href="profile/<%= profile['slug'] %>.html" class="grid-item">
-          <h2><%= profile['fullName'] %></h2>
+      <% data.website.talentProfile.each do |id, talentProfile| %>
+        <a href="profile/<%= talentProfile['slug'] %>.html" class="grid-item">
+          <h2><%= talentProfile['fullName'] %></h2>
         </a>
       <% end %>
     </div>

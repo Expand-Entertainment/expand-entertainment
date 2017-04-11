@@ -16,6 +16,7 @@
     #toggle {
       border: 2px solid black;
       cursor: pointer;
+      position: fixed;
       right: 10px;
       top: 10px;
     }
@@ -65,9 +66,9 @@
 
         img {
           height: 200%;
-          left: -100%;
           object-fit: cover;
           position: absolute;
+          left: 0;
           top: -50%;
           z-index: 10;
         }
@@ -89,7 +90,7 @@
     .row.for-list { display: block; }
 
     &.grid {
-      .row.for-grid { display: flex; }
+      .row.for-grid { display: flex; align-items: flex-start; }
       .row.for-list { display: none; }
     }
   }

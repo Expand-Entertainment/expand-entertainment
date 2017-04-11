@@ -10,12 +10,14 @@
       display: flex;
       flex-direction: column-reverse;
       width: 100%;
+      padding-left: 15px;
       @include bp('tablet') {
         flex-direction: row;
         height: 100vh;
       }
 
       .left-col {
+        background: #ffffff;
         align-items: center;
         display: flex;
         justify-content: center;

@@ -4,24 +4,18 @@ title: Talent Landing
 
 <div class="talent-detail">
   <div class="container">
-    <div class="profile-row">
+    <div class="profile-row" style="background:<%= talentProfile.backgroundColor %>">
       <div class="left-col">
         <div class="info-box">
-          <h2><%= profile.fullName %></h2>
+          <h2><%= talentProfile.fullName %></h2>
+          <p class="bio"><%= talentProfile.talentBio %></p>
           <ul>
-            <li>Website</li>
-            <li>Twitter</li>
-            <li>Instagram</li>
-            <li>Facebook</li>
-          </ul>
-          <p class="bio"><%= profile.bio %></p>
-          <ul>
-            <% profile.links.each do |link| %>
+            <% talentProfile.talentLinks.each do |link| %>
               <li><%= link %></li>
             <% end %>
           </ul>
           <ul>
-            <% profile.socialMediaMetrics.each do |link| %>
+            <% talentProfile.socialMediaMetrics.each do |link| %>
               <li><%= link %></li>
             <% end %>
           </ul>
@@ -30,7 +24,7 @@ title: Talent Landing
 
       <div class="right-col">
         <div class="main-image">
-          <img src=<%= profile.mainPhoto['url'] %> />
+          <img src=<%= talentProfile.mainImage['url'] %> />
         </div>
       </div>
     </div>
