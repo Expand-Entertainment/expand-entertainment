@@ -30,10 +30,36 @@
 
         .info-box {
           width: 100%;
+          h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+          }
 
           .bio {
-            margin: 0 auto;
-            max-width: 500px;
+            margin: 0 auto 30px auto;
+            max-width: 400px;
+          }
+
+          ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            li {
+              text-align: center;
+
+              a {
+                cursor: pointer;
+              }
+            }
+
+            &.links {
+              margin-bottom: 20px;
+
+              li {
+                padding: 0 10px;
+              }
+            }
           }
         }
       }

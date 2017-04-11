@@ -9,12 +9,12 @@ title: Talent Landing
         <div class="info-box">
           <h2><%= talentProfile.fullName %></h2>
           <p class="bio"><%= talentProfile.talentBio %></p>
-          <ul>
+          <ul class="links">
             <% talentProfile.talentLinks.each do |link| %>
-              <li><%= link %></li>
+              <li><a target="_blank" href="<%= link %>">link</a></li>
             <% end %>
           </ul>
-          <ul>
+          <ul class="social">
             <% talentProfile.socialMediaMetrics.each do |link| %>
               <li><%= link %></li>
             <% end %>
