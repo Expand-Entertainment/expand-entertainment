@@ -1,8 +1,61 @@
+@import "mix";
 .homepage {
   align-items: center;
   display: flex;
   height: 100vh;
   justify-content: center;
-  padding: 20px;
+  padding: 60px 30px;
   text-align: center;
+  @include bp('tablet') {
+    padding: 60px;
+  }
+  @include bp('desktop') {
+    padding: 80px;
+  }
+
+  .container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    a {
+      cursor: pointer;
+      position: absolute;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+    }
+    a.talent {
+      top: calc(40%);
+      left: calc(50% - 50px);
+    }
+    a.about {
+      top: calc(40% + 20px);
+      left: calc(50% - 20px);
+    }
+    a.creative {
+      top: calc(40% + 40px);
+    left: calc(50% - 65px);
+    }
+    a.contact {
+      top: calc(40% + 60px);
+      left: calc(50% - 20px);
+    }
+    &.expanded {
+      a.talent,
+      a.creative {
+        right: auto;
+      }
+      a.about,
+      a.contact {
+        left: auto;
+      }
+      a.creative,
+      a.contact {
+        top: auto;
+      }
+    }
+  }
 }

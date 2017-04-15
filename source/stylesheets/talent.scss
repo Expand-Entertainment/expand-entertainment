@@ -14,9 +14,10 @@
     }
 
     #toggle {
-      border: 2px solid black;
+      border: 10px solid black;
       cursor: pointer;
       position: fixed;
+      padding: 10px;
       right: 10px;
       top: 10px;
     }
@@ -37,13 +38,10 @@
     }
 
     .row.for-grid .grid-item {
-      height: 50%;
+      height: 100%;
       position: relative;
-      width: 50%;
-      @include bp('tablet') {
-        height: 50%;
-        width: 33.33%;
-      }
+      width: 100%;
+
       @include bp('desktop') {
         height: 50%;
         width: 25%;
@@ -87,7 +85,28 @@
     }
 
     .row.for-grid { display: none; }
-    .row.for-list { display: block; }
+    .row.for-list {
+      display: block;
+      padding-left: 10px;
+      a {
+        display: block;
+        text-decoration: none;
+        height: 55px;
+        display: flex;
+        align-items: center;
+      }
+      h2 {
+        font-size: 2em;
+        letter-spacing: .09em;
+        text-transform: uppercase;
+        @include transition(all, .225s, ease-in);
+      }
+      a:hover h2 {
+        font-size: 3em;
+        letter-spacing: .25em;
+        @include transition(all, .225s, ease-in);
+      }
+    }
 
     &.grid {
       .row.for-grid { display: flex; align-items: flex-start; }

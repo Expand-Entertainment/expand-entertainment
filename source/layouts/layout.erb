@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= current_page.data.title || "" %></title>
     <%= stylesheet_link_tag "reset" %>
     <%= stylesheet_link_tag "site" %>
@@ -16,6 +16,17 @@
   crossorigin="anonymous"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
   <%= javascript_include_tag "site" %>
+  <script src="javascripts/zepto.min.js"></script>
+  <script src="javascripts/hammer.js"></script>
   <script src="javascripts/expand.js"></script>
   <script>$(function($){ Expand.initialize(); });</script>
+  <script type="text/javascript">
+    window.addEventListener('load', function() {
+        var element = document.getElementById('homepage');
+        var hammertime = Hammer(element).on("tap", function(event) {
+          var linkContainer = document.getElementById('home-container');
+          linkContainer.classList.add('expanded');
+        })
+    }, false);
+  </script>
 </html>

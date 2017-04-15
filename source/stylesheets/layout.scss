@@ -7,6 +7,10 @@ html {
 
 body {
   background-color: #fff;
+
+  &.expanded {
+    border: 2px solid red;
+  }
 }
 
 a {
