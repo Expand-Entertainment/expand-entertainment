@@ -11,6 +11,16 @@
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
   <body>
+    <header>
+      <div class="layered-logo">
+        <%= image_tag '1-logo-purple.svg', :class => 'logo-layer'%>
+        <%= image_tag '2-logo-blue.svg', :class => 'logo-layer'%>
+        <%= image_tag '3-logo-green.svg', :class => 'logo-layer'%>
+        <%= image_tag '4-logo-yellow.svg', :class => 'logo-layer'%>
+        <%= image_tag '5-logo-orange.svg', :class => 'logo-layer'%>
+        <%= image_tag '6-logo-red.svg', :class => 'logo-layer'%>
+      </div>
+    </header>
     <%= yield %>
   </body>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"

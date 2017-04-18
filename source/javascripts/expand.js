@@ -3,14 +3,17 @@ var Expand = {
       Expand.bind();
     },
     bind: function() {
-      $(".logo").addClass("fade-in");
-      setTimeout(function(){
-         $(".wordmark").addClass("fade-in");
-     }, 1000);
-     setTimeout(function(){
-       $("#initial-load").addClass("loaded");
+      $("#initial-load").addClass("loaded");
        $("#initial-load").fadeOut(1000);
-    }, 4000);
+
+    //   $(".logo").addClass("fade-in");
+    //   setTimeout(function(){
+    //      $(".wordmark").addClass("fade-in");
+    //  }, 1000);
+    //  setTimeout(function(){
+    //    $("#initial-load").addClass("loaded");
+    //    $("#initial-load").fadeOut(1000);
+    // }, 4000);
 
       Expand.resizeHandler();
 
@@ -20,6 +23,7 @@ var Expand = {
         $(".about").animate({right: '0', top: '0'}, 400);
         $(".creative").animate({left: '0', bottom: '0'}, 400);
         $(".contact").animate({right: '0', bottom: '0'}, 400);
+        $(".layered-logo").addClass("logo-expanded");
       });
 
       $('#toggle').click(function() {

@@ -1,3 +1,4 @@
+@import "mix";
 html {
   box-sizing: border-box;
 }
@@ -27,4 +28,68 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+header {
+  background: white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  border: 1px solid yellow;
+  width: 100%;
+  background: white;
+}
+
+.layered-logo {
+  cursor: pointer;
+  padding-top: 10px;
+  height: 76px;
+  width: 45px;
+  margin: 0 auto;
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 100%;
+    @include transition(all, .325s, ease-in);
+
+    &:nth-child(2) {
+      margin-left: -20px;
+    }
+    &:nth-child(3) {
+      margin-left: -10px;
+    }
+    &:nth-child(4) {
+      margin-left: 0px;
+    }
+    &:nth-child(5) {
+      margin-left: 10px;
+    }
+    &:nth-child(6) {
+      margin-left: 20px;
+    }
+  }
+
+  &:hover,
+  &.logo-expanded {
+    img {
+      @include transition(all, .325s, ease-in);
+      &:nth-child(2) {
+        margin-left: -45px;
+      }
+      &:nth-child(3) {
+        margin-left: -25px;
+      }
+      &:nth-child(4) {
+        margin-left: 0px;
+      }
+      &:nth-child(5) {
+        margin-left: 25px;
+      }
+      &:nth-child(6) {
+        margin-left: 45px;
+      }
+    }
+  }
 }
