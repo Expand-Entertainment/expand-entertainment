@@ -39,6 +39,11 @@ header {
   border: 1px solid yellow;
   width: 100%;
   background: white;
+  z-index: 50;
+  @include bp('desktop') {
+    left: auto;
+    width: 20%;
+  }
 }
 
 .layered-logo {
