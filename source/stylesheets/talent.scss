@@ -3,6 +3,7 @@
 .content.talent {
   display: flex;
   flex-direction: column;
+  font-family: "akzidenz-grotesk-extended";
   @include bp('desktop') {
     flex-direction: row-reverse;
   }
