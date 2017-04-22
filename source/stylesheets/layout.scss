@@ -67,6 +67,19 @@ header {
   }
 }
 
+.talent header {
+  @include bp('desktop') {
+    left: auto;
+  }
+}
+
+.index header {
+  @include bp('desktop') {
+    left: 0;
+    margin: 0 auto;
+  }
+}
+
 .layered-logo {
   cursor: pointer;
   display: inline;

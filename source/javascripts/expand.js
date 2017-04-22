@@ -50,9 +50,20 @@ var Expand = {
         Expand.toggleTalent();
         var name = $(this).attr('data-name');
         var profile = document.getElementById(name);
-        V(profile, 'scroll', { duration: 500, offset: -58 });
-        $(profile).addClass('opaque');
+        if(profile) {
+          V(profile, 'scroll', { duration: 500, offset: -58 });
+          $(profile).addClass('opaque');
+        }
+
+        if ($('talent-container').hasClass('grid')) {
+          console.log('yes');
+          $('body').addClass('grid-active');
+        }
       });
+
+      if ($('body').hasClass('profile')) {
+        $("a.layered-logo").attr("href", "/talent.html")
+      }
     },
 
     resizeHandler: function() {
