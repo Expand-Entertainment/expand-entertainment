@@ -11,8 +11,26 @@
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
   <body>
-    <header>
-      <div class="layered-logo">
+    <header id="header">
+      <div class="mobile-links">
+        <%= link_to 'talent', '/talent.html', :class => 'talent' %>
+        <%= link_to 'about', '/about.html', :class => 'about' %>
+
+        <div id="mobile-button" class="layered-logo mobile">
+          <%= image_tag '1-logo-purple.svg', :class => 'logo-layer'%>
+          <%= image_tag '2-logo-blue.svg', :class => 'logo-layer'%>
+          <%= image_tag '3-logo-green.svg', :class => 'logo-layer'%>
+          <%= image_tag '4-logo-yellow.svg', :class => 'logo-layer'%>
+          <%= image_tag '5-logo-orange.svg', :class => 'logo-layer'%>
+          <%= image_tag '6-logo-red.svg', :class => 'logo-layer'%>
+        </div>
+
+        <%= link_to 'creative', '/creative.html', :class => 'creative' %>
+        <%= link_to 'contact', '/contact.html', :class => 'contact' %>
+      </div>
+
+
+      <div class="layered-logo desktop" data-behavior="toggle-talent">
         <%= image_tag '1-logo-purple.svg', :class => 'logo-layer'%>
         <%= image_tag '2-logo-blue.svg', :class => 'logo-layer'%>
         <%= image_tag '3-logo-green.svg', :class => 'logo-layer'%>
@@ -28,11 +46,8 @@
   crossorigin="anonymous"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
   <%= javascript_include_tag "site" %>
-  <script src="javascripts/zepto.min.js"></script>
-  <script src="javascripts/hammer.js"></script>
-  <script src="javascripts/expand.js"></script>
   <script>$(function($){ Expand.initialize(); });</script>
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     window.addEventListener('load', function() {
         var element = document.getElementById('homepage');
         var hammertime = Hammer(element).on("tap", function(event) {
@@ -40,5 +55,5 @@
           linkContainer.classList.add('expanded');
         })
     }, false);
-  </script>
+  </script> -->
 </html>

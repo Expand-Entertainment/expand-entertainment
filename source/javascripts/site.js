@@ -1,1 +1,4 @@
-// This is where it all goes :)
+//= require hammer
+//= require velocity
+//= require jquery.waypoints.min
+//= require expand

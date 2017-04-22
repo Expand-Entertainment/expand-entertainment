@@ -3,8 +3,14 @@ var Expand = {
       Expand.bind();
     },
     bind: function() {
+      if (window.jQuery) {
+        var V = $.Velocity;
+      } else {
+        var V = Velocity;
+      }
+
       $("#initial-load").addClass("loaded");
-       $("#initial-load").fadeOut(1000);
+      $("#initial-load").fadeOut(1000);
 
     //   $(".logo").addClass("fade-in");
     //   setTimeout(function(){
@@ -17,6 +23,20 @@ var Expand = {
 
       Expand.resizeHandler();
 
+      var butt = document.getElementById('mobile-button');
+      var logoButton = new Hammer(butt);
+      var head = document.getElementById('header');
+      var header = new Hammer(head);
+      logoButton.on("tap", function(event) {
+        $('.mobile-links').find('a').fadeIn();
+      });
+      logoButton.on("press", function(event) {
+        console.log('pressed');
+      });
+      header.on("swipe", function(event) {
+        console.log('swiped');
+      });
+
       $("#homepage").one('mousemove', function(e) {
         Expand.expandLinks(e);
         $(".talent").animate({left: '0', top: '0'}, 400);
@@ -26,9 +46,13 @@ var Expand = {
         $(".layered-logo").addClass("logo-expanded");
       });
 
-      $('#toggle').click(function() {
+      $('[data-behavior="toggle-talent"]').click(function() {
         Expand.toggleTalent();
-      })
+        var name = $(this).attr('data-name');
+        var profile = document.getElementById(name);
+        V(profile, 'scroll', { duration: 500, offset: -78 });
+        $(profile).addClass('opaque');
+      });
     },
 
     resizeHandler: function() {

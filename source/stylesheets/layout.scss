@@ -1,7 +1,9 @@
 @import "mix";
+
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -40,18 +42,37 @@ header {
   width: 100%;
   background: white;
   z-index: 50;
+  padding: 10px;
   @include bp('desktop') {
     left: auto;
     width: 20%;
   }
+
+  .mobile-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    a {
+      display: none;
+      text-align: center;
+      padding: 0 10px;
+      text-decoration: none;
+      font-family: "akzidenz-grotesk-extended";
+      font-size: .5em;
+      text-transform: uppercase;
+      @include bp('desktop') {
+        display: none !important;
+      }
+    }
+  }
 }
 
 .layered-logo {
+  display: inline;
   cursor: pointer;
-  padding-top: 10px;
-  height: 76px;
-  width: 45px;
-  margin: 0 auto;
+  height: 35px;
+  width: 30px;
   position: relative;
 
   img {
@@ -95,6 +116,20 @@ header {
       &:nth-child(6) {
         margin-left: 45px;
       }
+    }
+  }
+
+  &.desktop {
+    display: none;
+    @include bp('desktop') {
+      display: block;
+    }
+  }
+
+  &.mobile {
+    display: inline-block;
+    @include bp('desktop') {
+      display: none;
     }
   }
 }
