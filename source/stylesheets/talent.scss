@@ -77,11 +77,11 @@
         width: 100%;
 
         img {
-          height: 200%;
+          height: 100%;
           left: 0;
           object-fit: cover;
           position: absolute;
-          top: -50%;
+          top: 0;
           z-index: 10;
         }
       }

@@ -44,11 +44,12 @@
             max-width: 400px;
             display: none;
             font-family: "akzidenz-grotesk";
+            font-size: .75em;
             @include bp('desktop') {
               display: block;
             }
           }
-          
+
           ul.link-urls {
             margin-bottom: 30px;
           }
@@ -63,14 +64,26 @@
             li {
               text-align: center;
               padding: 0 20px;
+              margin-bottom: 15px;
               font-family: "akzidenz-grotesk";
               font-size: .75em;
               width: 20%;
 
               a {
-
                 cursor: pointer;
                 text-decoration: none;
+                text-transform: uppercase;
+
+                &:hover {
+                  &.tapestry {
+                    color: #b06473;
+                  }
+                }
+              }
+            }
+
+            &.titles {
+              li {
                 text-transform: uppercase;
               }
             }
@@ -98,10 +111,11 @@
             display: block;
             width: 100%;
             @include bp('desktop') {
-              height: 200%;
+              height: 100%;
               object-fit: cover;
               position: absolute;
-              top: -50%;
+              top: 0;
+              right: 0;
               z-index: 10;
             }
           }

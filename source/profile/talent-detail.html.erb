@@ -1,6 +1,10 @@
 ---
 title: Talent Landing
 ---
+<% color = talentProfile.backgroundColor %>
+<% if color === '#b06473' %>
+  <% hoverColor = 'tapestry' %>
+<% end %>
 
 <div class="talent-detail">
   <div class="container">
@@ -13,7 +17,7 @@ title: Talent Landing
             <ul class="link-urls">
               <% talentProfile.linkTypes.zip(talentProfile.urlsForLinks).each do |link, url| %>
                 <li>
-                  <a target="_blank" href="<%= url %>">
+                  <a class="<%= hoverColor %>" target="_blank" href="<%= url %>">
                     <p><%= link %></p>
                   </a>
                 </li>
@@ -24,17 +28,16 @@ title: Talent Landing
           <p class="bio"><%= talentProfile.talentBio %></p>
 
           <% if talentProfile.socialMediaTypes %>
-            <ul class="media-types">
+            <ul class="media-types titles">
               <% talentProfile.socialMediaTypes.each do |type| %>
                 <li>
                   <%= type %>
                 </li>
               <% end %>
             </ul>
-
             <ul class="media-types">
               <% talentProfile.socialMediaNumbers.each do |type| %>
-                <li>
+                <li class="<%= hoverColor %>" style="color: <%= talentProfile.backgroundColor %>;">
                   <%= type %>
                 </li>
               <% end %>
