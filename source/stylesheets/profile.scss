@@ -30,38 +30,48 @@
 
         .info-box {
           width: 100%;
+
           h2 {
-            font-size: 2em;
+            font-size: 1.25em;
             margin-bottom: 30px;
+            letter-spacing: 1em;
+            font-family: "akzidenz-grotesk-extended";
+            text-transform: uppercase;
           }
 
           .bio {
             margin: 0 auto 30px auto;
             max-width: 400px;
             display: none;
+            font-family: "akzidenz-grotesk";
             @include bp('desktop') {
               display: block;
             }
           }
+          
+          ul.link-urls {
+            margin-bottom: 30px;
+          }
 
-          ul {
+          ul.link-types,
+          ul.link-urls,
+          ul.media-types {
             display: flex;
             align-items: center;
             justify-content: center;
 
             li {
               text-align: center;
+              padding: 0 20px;
+              font-family: "akzidenz-grotesk";
+              font-size: .75em;
+              width: 20%;
 
               a {
+
                 cursor: pointer;
-              }
-            }
-
-            &.links {
-              margin-bottom: 20px;
-
-              li {
-                padding: 0 10px;
+                text-decoration: none;
+                text-transform: uppercase;
               }
             }
           }

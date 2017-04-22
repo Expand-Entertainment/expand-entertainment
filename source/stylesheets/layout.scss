@@ -43,7 +43,7 @@ header {
   width: 100%;
   z-index: 50;
   @include bp('desktop') {
-    left: auto;
+    left: 10px;
     width: 15%;
   }
 
