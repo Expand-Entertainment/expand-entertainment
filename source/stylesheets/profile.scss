@@ -9,7 +9,7 @@
       flex-direction: column-reverse;
       width: 100%;
       padding-bottom: 10px;
-      @include bp('tablet') {
+      @include bp('desktop') {
         height: 100vh;
         flex-direction: row;
         padding-left: 10px;
@@ -24,7 +24,7 @@
         padding: 20px;
         text-align: center;
         width: 100%;
-        @include bp('tablet') {
+        @include bp('desktop') {
           width: 60%;
         }
 
@@ -70,7 +70,7 @@
 
       .right-col {
         width: 100%;
-        @include bp('tablet') {
+        @include bp('desktop') {
           height: 100%;
           width: 40%;
         }
@@ -80,14 +80,14 @@
           height: 100%;
           position: relative;
           width: 100%;
-          @include bp('tablet') {
+          @include bp('desktop') {
             overflow: hidden;
           }
 
           img {
             display: block;
             width: 100%;
-            @include bp('tablet') {
+            @include bp('desktop') {
               height: 200%;
               object-fit: cover;
               position: absolute;

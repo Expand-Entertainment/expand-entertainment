@@ -3,7 +3,6 @@
 .content.talent {
   display: flex;
   flex-direction: column;
-  font-family: "akzidenz-grotesk-extended";
   @include bp('desktop') {
     flex-direction: row-reverse;
   }
@@ -11,7 +10,7 @@
   .right-toggle {
     width: 100%;
     @include bp('desktop') {
-      width: 20%;
+      width: 15%;
     }
 
     #toggle {
@@ -31,7 +30,7 @@
     width: 100%;
     @include bp('desktop') {
       margin-top: 0;
-      width: 80%;
+      width: 85%;
     }
 
     .row {
@@ -40,10 +39,14 @@
       flex-wrap: wrap;
       height: 100vh;
       width: 100%;
+
+      h2 {
+        font-family: "akzidenz-grotesk";
+      }
     }
 
     .row.for-grid .grid-item {
-      height: 100%;
+      height: calc(100% - 58px);
       position: relative;
       width: 100%;
 
@@ -53,10 +56,16 @@
       }
 
       h2 {
+        bottom: 15%;
         display: none;
         left: 0;
+        margin: 0 auto;
         position: absolute;
-        top: 0;
+        right: 0;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: .75em;
+        letter-spacing: .5em;
         z-index: 20;
       }
 
@@ -69,9 +78,9 @@
 
         img {
           height: 200%;
+          left: 0;
           object-fit: cover;
           position: absolute;
-          left: 0;
           top: -50%;
           z-index: 10;
         }
@@ -94,13 +103,17 @@
     .row.for-list {
       display: block;
       padding-left: 10px;
+      @include bp('desktop') {
+        padding-top: 50px;
+      }
+
       a {
+        align-items: center;
         cursor: pointer;
         display: block;
-        text-decoration: none;
-        height: 55px;
         display: flex;
-        align-items: center;
+        height: 55px;
+        text-decoration: none;
 
         &.desktop {
           display: none;
@@ -110,24 +123,33 @@
         }
 
         &.mobile {
-          color: blue;
-          display: block;
+          display: flex;
           @include bp('desktop') {
             display: none;
           }
         }
       }
+
       h2 {
-        font-size: 1em;
-        letter-spacing: .09em;
+        font-size: .675em;
+        letter-spacing: .5em;
         text-transform: uppercase;
-        @include transition(all, .125s, ease-in);
+        @include transition(all, .325s, ease-in-out);
+        @include bp('desktop') {
+          font-size: 1em;
+          letter-spacing: .75em;
+        }
       }
-      a:hover,
+
+      a:hover h2,
       a.active h2 {
-        font-size: 1.25em;
-        letter-spacing: .25em;
-        @include transition(all, .125s, ease-in);
+        font-size: .75em;
+        letter-spacing: 1em;
+        @include transition(all, .325s, ease-in-out);
+        @include bp('desktop') {
+          font-size: 1.25em;
+          letter-spacing: 1.5em;
+        }
       }
     }
 

@@ -50,7 +50,7 @@ var Expand = {
         Expand.toggleTalent();
         var name = $(this).attr('data-name');
         var profile = document.getElementById(name);
-        V(profile, 'scroll', { duration: 500, offset: -78 });
+        V(profile, 'scroll', { duration: 500, offset: -58 });
         $(profile).addClass('opaque');
       });
     },
