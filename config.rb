@@ -1,7 +1,7 @@
 set :markdown, parse_block_html: true
 activate :contentful do |f|
   f.space = { website: 'dtr3t57nrpyu'}
-  f.access_token = CONTENTFUL_API_KEY
+  f.access_token = ENV['CONTENTFUL_API_KEY']
   f.rebuild_on_webhook = true
   f.content_types = { talentProfile: 'talentProfile', contact: 'contact', about: 'about', creative: 'creative' }
 end
