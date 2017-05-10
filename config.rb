@@ -62,8 +62,4 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
   activate :relative_assets
-  activate :imageoptim do |options|
-    options.manifest = true
-    options.image_extensions = %w(.png .jpg .gif .svg)
-  end
 end
