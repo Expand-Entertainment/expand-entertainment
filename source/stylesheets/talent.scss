@@ -77,12 +77,18 @@
         width: 100%;
 
         img {
-          height: 100%;
+          bottom: 0;
+          display: block;
+          height: 101%;
           left: 0;
-          object-fit: cover;
           position: absolute;
-          top: 0;
-          z-index: 10;
+          right: 0;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+          width: 100%;
+          -o-object-fit: cover;
+          object-fit: cover;
         }
       }
 
@@ -104,7 +110,7 @@
       display: block;
       padding-left: 10px;
       @include bp('desktop') {
-        padding-top: 50px;
+        padding-top: 60px;
       }
 
       a {
@@ -154,7 +160,7 @@
     }
 
     &.grid {
-      .row.for-grid { display: flex; align-items: flex-start; }
+      .row.for-grid { display: flex; align-items: flex-start; padding-top: 60px;}
       .row.for-list { display: none; }
     }
   }

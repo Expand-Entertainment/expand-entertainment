@@ -33,8 +33,8 @@ a {
 }
 
 header {
-  background: white;
-  background: white;
+  background: rgba(255,255,255,.7);
+  // border: 2px solid blue;
   left: 0;
   padding: 10px;
   position: fixed;
@@ -43,8 +43,9 @@ header {
   width: 100%;
   z-index: 50;
   @include bp('desktop') {
-    left: 10px;
-    width: 15%;
+    // left: 10px;
+    height: 55px;
+    width: 100%;
   }
 
   .mobile-links {
@@ -77,6 +78,21 @@ header {
   @include bp('desktop') {
     left: 0;
     margin: 0 auto;
+  }
+}
+
+.wordmark-home {
+  display: none;
+  width: 40%;
+  margin: 0 auto;
+  @include bp('desktop') {
+    display: block;
+  }
+
+  img {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
   }
 }
 
@@ -156,7 +172,10 @@ header {
     display: none;
     @include bp('desktop') {
       display: block;
-      margin: 0 auto;
+      margin: 0;
+      position: fixed;
+      right: 25px;
+      top: 5px;
     }
   }
 
