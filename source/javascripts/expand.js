@@ -9,17 +9,17 @@ var Expand = {
         var V = Velocity;
       }
 
-      $("#initial-load").addClass("loaded");
-      $("#initial-load").fadeOut(1000);
+      // $("#initial-load").addClass("loaded");
+      // $("#initial-load").fadeOut(1000);
 
-    //   $(".logo").addClass("fade-in");
-    //   setTimeout(function(){
-    //      $(".wordmark").addClass("fade-in");
-    //  }, 1000);
-    //  setTimeout(function(){
-    //    $("#initial-load").addClass("loaded");
-    //    $("#initial-load").fadeOut(1000);
-    // }, 4000);
+      $(".logo").addClass("fade-in");
+      setTimeout(function(){
+         $(".wordmark").addClass("fade-in");
+       }, 1000);
+       setTimeout(function(){
+         $("#initial-load").addClass("loaded");
+         $("#initial-load").fadeOut(1000);
+      }, 4000);
 
       Expand.resizeHandler();
 
