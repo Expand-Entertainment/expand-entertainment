@@ -35,7 +35,6 @@ a {
 
 header {
   background: white;
-  border: 2px solid blue;
   left: 0;
   padding: 10px;
   position: fixed;
@@ -47,13 +46,14 @@ header {
   @include bp('desktop') {
     // border: 1px solid black;
     // left: 10px;
-    height: 45px;
+    height: 60px;
     width: 100%;
   }
 
   .mobile-links {
     clear: both;
     height: 100%;
+    display: flex;
 
     .left,
     .right {
@@ -88,6 +88,47 @@ header {
       }
     }
   }
+
+  .logos {
+    height: 100%;
+    width: 30%;
+    margin: 0 auto;
+
+    .wordmark-home {
+      display: none;
+      width: 30%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: 0;
+      @include bp('desktop') {
+        display: block;
+      }
+
+      img {
+        display: block;
+        margin-top: 7px;
+        width: 100%;
+      }
+    }
+
+    .layered-logo {
+      cursor: pointer;
+      display: inline;
+      height: 35px;
+      position: absolute;
+      left: 18px;
+      right: 0;
+      margin: 0 auto;
+      top: 8px;
+      width: 30px;
+      @include bp('desktop') {
+        top: auto;
+        bottom: 5px;
+      }
+    }
+  }
 }
 
 .talent header {
@@ -105,38 +146,10 @@ header {
 
 .profile header {
   // background: transparent;
-  .wordmark-home { display: none; }
-}
-
-.wordmark-home {
-  display: none;
-  width: 40%;
-  margin: 0 auto;
-  @include bp('desktop') {
-    display: block;
-  }
-
-  img {
-    display: block;
-    margin-top: 20px;
-    width: 100%;
-  }
+  .layered-logo { display: none; }
 }
 
 .layered-logo {
-  cursor: pointer;
-  display: inline;
-  height: 35px;
-  position: absolute;
-  left: 18px;
-  right: 0;
-  margin: 0 auto;
-  top: 8px;
-  width: 30px;
-  @include bp('desktop') {
-    top: 0;
-  }
-
   img {
     position: absolute;
     margin-top: 6px;
