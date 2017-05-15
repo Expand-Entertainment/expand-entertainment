@@ -26,7 +26,7 @@
   }
 
   .container {
-    margin-top: 80px;
+    margin-top: 59px;
     width: 100%;
     @include bp('desktop') {
       margin-top: 0;
@@ -110,7 +110,7 @@
       display: block;
       padding-left: 10px;
       @include bp('desktop') {
-        padding-top: 60px;
+        padding-top: 75px;
       }
 
       a {
@@ -160,7 +160,7 @@
     }
 
     &.grid {
-      .row.for-grid { display: flex; align-items: flex-start; padding-top: 60px;}
+      .row.for-grid { display: flex; align-items: flex-start; position: relative; z-index: 99999; }
       .row.for-list { display: none; }
     }
   }

@@ -1,7 +1,11 @@
 @import "mix";
 .talent-detail {
   .container {
+    padding-top: 59px;
     width: 100%;
+    @include bp('desktop') {
+      padding-top: 44px;
+    }
 
     .profile-row {
       align-items: stretch;
@@ -10,10 +14,9 @@
       width: 100%;
       padding-bottom: 10px;
       @include bp('desktop') {
-        height: 100vh;
+        height: calc(100vh - 45px);
         flex-direction: row-reverse;
-        padding-left: 10px;
-        padding-bottom: 0;
+        padding: 0;
       }
 
       .left-col {
@@ -25,6 +28,7 @@
         text-align: center;
         width: 100%;
         @include bp('desktop') {
+          height: calc(100% - 10px);
           width: 60%;
         }
 
@@ -63,7 +67,6 @@
 
             li {
               text-align: center;
-              padding: 0 20px;
               margin-bottom: 15px;
               font-family: "akzidenz-grotesk";
               font-size: .75em;

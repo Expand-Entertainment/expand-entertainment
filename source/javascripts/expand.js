@@ -9,33 +9,26 @@ var Expand = {
         var V = Velocity;
       }
 
-      // $("#initial-load").addClass("loaded");
-      // $("#initial-load").fadeOut(1000);
+      $("#initial-load").addClass("loaded");
+      $("#initial-load").fadeOut(1000);
 
-      $(".logo").addClass("fade-in");
-      setTimeout(function(){
-         $(".wordmark").addClass("fade-in");
-       }, 1000);
-       setTimeout(function(){
-         $("#initial-load").addClass("loaded");
-         $("#initial-load").fadeOut(1000);
-      }, 4000);
+      // $(".logo").addClass("fade-in");
+      // setTimeout(function(){
+      //    $(".wordmark").addClass("fade-in");
+      //  }, 1000);
+      //  setTimeout(function(){
+      //    $("#initial-load").addClass("loaded");
+      //    $("#initial-load").fadeOut(1000);
+      // }, 4000);
 
       Expand.resizeHandler();
 
-      var butt = document.getElementById('mobile-button');
+      var butt = document.getElementById('toggle-button');
       var logoButton = new Hammer(butt);
-      var head = document.getElementById('header');
-      var header = new Hammer(head);
       logoButton.on("tap", function(event) {
-        $('.mobile-links').find('a').fadeIn();
+        Expand.toggleTalent();
       });
-      logoButton.on("press", function(event) {
-        console.log('pressed');
-      });
-      header.on("swipe", function(event) {
-        console.log('swiped');
-      });
+
 
       $("#homepage").one('mousemove', function(e) {
         Expand.expandLinks(e);
@@ -46,24 +39,35 @@ var Expand = {
         $(".layered-logo").addClass("logo-expanded");
       });
 
-      $('[data-behavior="toggle-talent"]').click(function() {
-        Expand.toggleTalent();
-        var name = $(this).attr('data-name');
-        var profile = document.getElementById(name);
-        if(profile) {
-          V(profile, 'scroll', { duration: 500, offset: -58 });
-          $(profile).addClass('opaque');
-        }
+      // $('[data-behavior="toggle-talent"]').click(function() {
+      //   Expand.toggleTalent();
+      //   var name = $(this).attr('data-name');
+      //   var profile = document.getElementById(name);
+      //   if(profile) {
+      //     V(profile, 'scroll', { duration: 500, offset: -58 });
+      //     $(profile).addClass('opaque');
+      //   }
+      //
+      //   if ($('talent-container').hasClass('grid')) {
+      //     console.log('yes');
+      //     $('body').addClass('grid-active');
+      //   }
+      // });
+      //
+      // if ($('body').hasClass('profile')) {
+      //   $("a.layered-logo").attr("href", "/talent.html")
+      // }
 
-        if ($('talent-container').hasClass('grid')) {
-          console.log('yes');
-          $('body').addClass('grid-active');
-        }
+      var lastScrollTop = 0;
+      $(window).scroll(function(event){
+         var st = $(this).scrollTop();
+         if (st > lastScrollTop){
+            $('.mobile-links').find('a').fadeOut();
+         } else {
+             $('.mobile-links').find('a').fadeIn();
+         }
+         lastScrollTop = st;
       });
-
-      if ($('body').hasClass('profile')) {
-        $("a.layered-logo").attr("href", "/talent.html")
-      }
     },
 
     resizeHandler: function() {

@@ -9,6 +9,7 @@ html {
 }
 
 body {
+  border: 1px solid red;
   background-color: #fff;
 
   &.expanded {
@@ -33,36 +34,57 @@ a {
 }
 
 header {
-  background: rgba(255,255,255,.7);
-  // border: 2px solid blue;
+  background: white;
+  border: 2px solid blue;
   left: 0;
   padding: 10px;
   position: fixed;
   right: 0;
   top: 0;
+  height: 60px;
   width: 100%;
-  z-index: 50;
+  z-index: 999999;
   @include bp('desktop') {
+    // border: 1px solid black;
     // left: 10px;
-    height: 55px;
+    height: 45px;
     width: 100%;
   }
 
   .mobile-links {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
+    clear: both;
+    height: 100%;
+
+    .left,
+    .right {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .left {
+      width: 35%;
+      padding-left: 15px;
+      float: left;
+    }
+
+    .right {
+      width: 35%;
+      padding-right: 15px;
+      float: right;
+    }
 
     a {
       display: none;
       font-family: "akzidenz-grotesk";
       font-size: .475em;
-      padding: 0 10px;
+      padding: 0;
       text-align: center;
       text-decoration: none;
       text-transform: uppercase;
       @include bp('desktop') {
-        display: none !important;
+        font-size: .8675em;
       }
     }
   }
@@ -81,6 +103,11 @@ header {
   }
 }
 
+.profile header {
+  // background: transparent;
+  .wordmark-home { display: none; }
+}
+
 .wordmark-home {
   display: none;
   width: 40%;
@@ -91,7 +118,7 @@ header {
 
   img {
     display: block;
-    margin-top: 10px;
+    margin-top: 20px;
     width: 100%;
   }
 }
@@ -100,8 +127,15 @@ header {
   cursor: pointer;
   display: inline;
   height: 35px;
-  position: relative;
+  position: absolute;
+  left: 18px;
+  right: 0;
+  margin: 0 auto;
+  top: 8px;
   width: 30px;
+  @include bp('desktop') {
+    top: 0;
+  }
 
   img {
     position: absolute;
@@ -175,7 +209,7 @@ header {
       margin: 0;
       position: fixed;
       right: 25px;
-      top: 5px;
+      top: 15px;
     }
   }
 

@@ -23,10 +23,7 @@ title: Talent Landing
 
     <div class="row for-list">
       <% data.website.talentProfile.each do |id, talentProfile| %>
-        <a data-behavior="toggle-talent" data-name="<%= talentProfile['slug'] %>" class="grid-item mobile">
-          <h2><%= talentProfile['fullName'] %></h2>
-        </a>
-        <a href="profile/<%= talentProfile['slug'] %>.html" class="grid-item desktop">
+        <a href="profile/<%= talentProfile['slug'] %>.html" class="grid-item">
           <h2><%= talentProfile['fullName'] %></h2>
         </a>
       <% end %>
