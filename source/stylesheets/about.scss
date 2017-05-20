@@ -1,0 +1,106 @@
+@import "mix";
+
+.info-page {
+  .bio-section {
+    display: none;
+  }
+
+  .text {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.show-bios {
+    .text {
+      display: none;
+    }
+
+    .bio-section {
+      display: block;
+      margin-top: 60px;
+
+      .bio-wrapper {
+        height: calc(100vh - 60px);
+        @include bp('desktop') {
+          height: calc(100vh - 45px);
+          display: flex;
+          align-items: center;
+        }
+
+        .bio-image {
+          height: 80%;
+          overflow: scroll;
+          position: relative;
+          @include bp('desktop') {
+            display: flex;
+            height: 100vh;
+          }
+
+          img {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            @include bp('desktop') {
+              position: static;
+              width: 50%;
+            }
+          }
+        }
+
+        .bio-text {
+          position: absolute;
+          top: 0;
+          height: 200%;
+          z-index: 999;
+          @include bp('desktop') {
+            position: static;
+            width: 50%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+          }
+
+          h1 {
+            display: none;
+            @include bp('desktop') {
+              display: block;
+            }
+          }
+
+          p {
+            padding: 30px 20px 100px 20px;
+            margin-top: 120%;
+            background: pink;
+            opacity: .5;
+            @include bp('desktop') {
+              margin: 0;
+              background: white;
+              opacity: 1;
+            }
+          }
+        }
+
+        .bio-name {
+          background: white;
+          width: 100%;
+          height: 20%;
+          position: relative;
+          z-index: 999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include bp('desktop') {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

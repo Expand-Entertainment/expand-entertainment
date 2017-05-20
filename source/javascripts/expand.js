@@ -29,11 +29,23 @@ var Expand = {
       var butt = document.getElementById('toggle-button');
       var logoButton = new Hammer(butt);
       logoButton.on("tap", function(event) {
-        Expand.toggleTalent();
+        if ($('body').hasClass('talent')) {
+          Expand.toggleTalent();
+        }
+        if ($('body').hasClass('about')) {
+          Expand.toggleAbout();
+        }
       });
 
       $('[data-behavior="toggle-talent"]').click(function() {
-        Expand.toggleTalent();
+
+        if ($('body').hasClass('talent')) {
+          Expand.toggleTalent();
+        }
+        if ($('body').hasClass('about')) {
+          Expand.toggleAbout();
+        }
+
       });
 
       $("header").hover(
@@ -53,7 +65,7 @@ var Expand = {
         $(".layered-logo").addClass("logo-expanded");
       });
 
-      if ($('body').hasClass('talent')) {
+      if ($('body').hasClass('talent') || $('body').hasClass('about') ) {
         $("a.layered-logo").removeAttr("href");
       }
     },
@@ -80,6 +92,10 @@ var Expand = {
 
     toggleTalent: function() {
       $("div.talent-container").toggleClass("grid");
+    },
+
+    toggleAbout: function() {
+      $("div.info-page").toggleClass("show-bios");
     },
 
     expandLinks: function(e) {
