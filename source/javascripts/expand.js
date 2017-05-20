@@ -2,6 +2,7 @@ var Expand = {
     initialize: function() {
       Expand.bind();
     },
+
     bind: function() {
       if (window.jQuery) {
         var V = $.Velocity;
@@ -21,7 +22,6 @@ var Expand = {
       //    $("#initial-load").fadeOut(1000);
       // }, 4000);
 
-
       $(window).on('resize', function(){
         Expand.resizeHandler();
       });
@@ -31,6 +31,7 @@ var Expand = {
       logoButton.on("tap", function(event) {
         Expand.toggleTalent();
       });
+
       $('[data-behavior="toggle-talent"]').click(function() {
         Expand.toggleTalent();
       });
@@ -52,48 +53,32 @@ var Expand = {
         $(".layered-logo").addClass("logo-expanded");
       });
 
-      // $('[data-behavior="toggle-talent"]').click(function() {
-      //   Expand.toggleTalent();
-      //   var name = $(this).attr('data-name');
-      //   var profile = document.getElementById(name);
-      //   if(profile) {
-      //     V(profile, 'scroll', { duration: 500, offset: -58 });
-      //     $(profile).addClass('opaque');
-      //   }
-      //
-      //   if ($('talent-container').hasClass('grid')) {
-      //     console.log('yes');
-      //     $('body').addClass('grid-active');
-      //   }
-      // });
-      //
-      // if ($('body').hasClass('profile')) {
-      //   $("a.layered-logo").attr("href", "/talent.html")
-      // }
-
-
-
-    },
-
-    resizeHandler: function() {
-      console.log('resize');
-      console.log(window.innerWidth);
-      if (window.innerWidth < 768) {
-        var lastScrollTop = 0;
-        $(window).scroll(function(event){
-           var st = $(this).scrollTop();
-           if (st > lastScrollTop){
-              $('.mobile-links').find('.page-link').fadeOut();
-           } else {
-               $('.mobile-links').find('.page-link').fadeIn();
-           }
-           lastScrollTop = st;
-        });
+      if ($('body').hasClass('talent')) {
+        $("a.layered-logo").removeAttr("href");
       }
     },
 
+    resizeHandler: function() {
+      var lastScrollTop = 0;
+
+      $(window).scroll(function(event){
+        if (window.innerWidth < 768) {
+          var st = $(this).scrollTop();
+
+          if (st > lastScrollTop){
+             $('.mobile-links').find('.page-link').fadeOut();
+             $("header").fadeOut();
+          } else {
+              $('.mobile-links').find('.page-link').fadeIn();
+              $("header").fadeIn();
+          }
+
+          lastScrollTop = st;
+        }
+      });
+    },
+
     toggleTalent: function() {
-      console.log('toggle');
       $("div.talent-container").toggleClass("grid");
     },
 

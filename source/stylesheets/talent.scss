@@ -3,9 +3,6 @@
 .content.talent {
   display: flex;
   flex-direction: column;
-  @include bp('desktop') {
-    flex-direction: row-reverse;
-  }
 
   .right-toggle {
     width: 100%;
@@ -30,6 +27,7 @@
     width: 100%;
     @include bp('desktop') {
       margin-top: 0;
+      padding: 0;
       width: 85%;
     }
 
@@ -37,7 +35,7 @@
       align-items: center;
       display: flex;
       flex-wrap: wrap;
-      height: 100vh;
+      height: calc(100vh - 45px);
       width: 100%;
 
       h2 {
@@ -109,6 +107,9 @@
     .row.for-list {
       display: block;
       padding-left: 10px;
+      @include bp('desktop') {
+        padding-top: 45px;
+      }
 
       a {
         align-items: center;

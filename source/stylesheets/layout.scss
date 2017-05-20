@@ -9,12 +9,7 @@ html {
 }
 
 body {
-  border: 1px solid red;
   background-color: #fff;
-
-  &.expanded {
-    // border: 2px solid red;
-  }
 }
 
 a {
@@ -46,7 +41,7 @@ header {
   @include bp('desktop') {
     // border: 1px solid black;
     // left: 10px;
-    height: 60px;
+    height: 45px;
     width: 100%;
   }
 
@@ -54,6 +49,10 @@ header {
     clear: both;
     height: 100%;
     display: flex;
+    @include bp('desktop') {
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
     .left,
     .right {
@@ -61,18 +60,29 @@ header {
       display: flex;
       justify-content: space-between;
       height: 100%;
+      @include bp('desktop') {
+        justify-content: space-around;
+      }
     }
 
     .left {
       width: 35%;
       padding-left: 15px;
       float: left;
+      @include bp('desktop') {
+        width: 50%;
+        padding: 0;
+      }
     }
 
     .right {
       width: 35%;
       padding-right: 15px;
       float: right;
+      @include bp('desktop') {
+        width: 50%;
+        padding: 0;
+      }
     }
 
     a {
@@ -93,7 +103,9 @@ header {
     height: 100%;
     width: 30%;
     margin: 0 auto;
-
+    @include bp('desktop') {
+      width: 0;
+    }
     .wordmark-home {
       display: none;
       width: 30%;
@@ -118,24 +130,21 @@ header {
       display: inline;
       height: 35px;
       position: absolute;
-      left: 18px;
+      left: -5px;
       right: 0;
       margin: 0 auto;
       top: 8px;
       width: 30px;
       @include bp('desktop') {
-        top: auto;
+        top: 3px;
+        left: auto;
+        right: 60px;
         bottom: 5px;
       }
     }
   }
 }
 
-.talent header {
-  @include bp('desktop') {
-    left: auto;
-  }
-}
 
 .index header {
   @include bp('desktop') {
@@ -145,8 +154,29 @@ header {
 }
 
 .profile header {
-  // background: transparent;
-  .layered-logo { display: none; }
+  display: none;
+}
+
+.profile,
+.talent,
+.about,
+.creative,
+.contact {
+  header {
+    @include bp('desktop') {
+      display: block;
+      position: fixed;
+      background: transparent;
+      @include transition(all, .325s, ease-in);
+      .wordmark-home {
+        display: none;
+      }
+      &:hover {
+        background: white;
+        @include transition(all, .325s, ease-in);
+      }
+    }
+  }
 }
 
 .layered-logo {
@@ -158,27 +188,22 @@ header {
     @include transition(all, .325s, ease-in);
 
     &:nth-child(2) {
-      // display: none;
       margin-left: -13px;
       margin-top: 5px;
     }
     &:nth-child(3) {
-      // display: none;
       margin-left: -10px;
       margin-top: 4px;
     }
     &:nth-child(4) {
-      // display: none;
       margin-left: -7px;
       margin-top: 3px;
     }
     &:nth-child(5) {
-      // display: none;
       margin-left: -4px;
       margin-top: 2px;
     }
     &:nth-child(6) {
-      // display: none;
       margin-left: -1px;
       margin-top: 1px;
     }
@@ -193,23 +218,18 @@ header {
       @include transition(all, .325s, ease-in);
 
       &:nth-child(2) {
-        // display: none;
         margin-left: -33px;
       }
       &:nth-child(3) {
-        // display: none;
         margin-left: -23px;
       }
       &:nth-child(4) {
-        // display: none;
         margin-left: -13px;
       }
       &:nth-child(5) {
-        // display: none;
         margin-left: 0px;
       }
       &:nth-child(6) {
-        // display: none;
         margin-left: 13px;
       }
     }
