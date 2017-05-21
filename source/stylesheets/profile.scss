@@ -50,43 +50,7 @@
             }
           }
 
-          ul.link-urls {
-            margin-bottom: 30px;
-          }
 
-          ul.link-types,
-          ul.link-urls,
-          ul.media-types {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            li {
-              text-align: center;
-              margin-bottom: 15px;
-              font-family: "akzidenz-grotesk";
-              font-size: .75em;
-              width: 20%;
-
-              a {
-                cursor: pointer;
-                text-decoration: none;
-                text-transform: uppercase;
-
-                &:hover {
-                  &.tapestry {
-                    color: #b06473;
-                  }
-                }
-              }
-            }
-
-            &.titles {
-              li {
-                text-transform: uppercase;
-              }
-            }
-          }
         }
       }
 
@@ -118,6 +82,156 @@
               z-index: 10;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+
+.profile {
+
+  .bio-section {
+    display: block;
+    margin-top: 60px;
+    @include bp('desktop') {
+      margin-top: 0;
+    }
+
+    .bio-wrapper {
+      height: calc(100vh - 60px);
+      @include bp('desktop') {
+        height: calc(100vh);
+        display: flex;
+        align-items: center;
+      }
+      &.for-mobile {
+        @include bp('desktop') {
+          display: none;
+        }
+      }
+      .specs {
+        background: white;
+        z-index: 999;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        @include bp('desktop') {
+          height: auto;
+        }
+
+        ul.link-urls {
+          margin-bottom: 30px;
+        }
+
+        ul.link-types,
+        ul.link-urls,
+        ul.media-types {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          li {
+            text-align: center;
+            margin-bottom: 15px;
+            font-family: "akzidenz-grotesk";
+            font-size: .75em;
+            width: 20%;
+
+            a {
+              cursor: pointer;
+              text-decoration: none;
+              text-transform: uppercase;
+
+              &:hover {
+                &.tapestry {
+                  color: #b06473;
+                }
+              }
+            }
+          }
+
+          &.titles {
+            li {
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+
+      .bio-image {
+        height: 80%;
+        overflow: scroll;
+        position: relative;
+        @include bp('desktop') {
+          display: flex;
+          height: 100vh;
+        }
+
+        img {
+          display: block;
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: 0;
+          height: 100%;
+          object-fit: cover;
+          @include bp('desktop') {
+            position: static;
+            width: 50%;
+          }
+        }
+      }
+
+      .bio-text {
+        position: absolute;
+        top: 0;
+        height: 120%;
+        z-index: 999;
+        @include bp('desktop') {
+          position: static;
+          width: 50%;
+          height: 100vh;
+          padding: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+
+        h1,
+        .specs {
+          display: none;
+          @include bp('desktop') {
+            display: block;
+          }
+        }
+
+        p {
+          padding: 30px 20px 100px 20px;
+          margin-top: 120%;
+          background: pink;
+          opacity: .5;
+          @include bp('desktop') {
+            margin: 0;
+            background: white;
+            padding: 0;
+            opacity: 1;
+          }
+        }
+      }
+
+      .bio-name {
+        background: white;
+        width: 100%;
+        height: 20%;
+        position: relative;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include bp('desktop') {
+          display: none;
         }
       }
     }
