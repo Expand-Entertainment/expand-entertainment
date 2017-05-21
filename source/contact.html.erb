@@ -1,5 +1,7 @@
 <div class="info-page">
-  <% data.website.contact.each do |id, text| %>
-    <h2><%= text['contactPageText'] %></h2>
-  <% end %>
+  <div class="text">
+    <% data.website.contact.each do |id, text| %>
+      <h2><%= text['contactPageText'] %></h2>
+    <% end %>
+  </div>
 </div>

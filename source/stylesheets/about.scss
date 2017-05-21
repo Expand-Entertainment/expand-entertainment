@@ -20,11 +20,14 @@
     .bio-section {
       display: block;
       margin-top: 60px;
+      @include bp('desktop') {
+        margin-top: 0;
+      }
 
       .bio-wrapper {
         height: calc(100vh - 60px);
         @include bp('desktop') {
-          height: calc(100vh - 45px);
+          height: calc(100vh);
           display: flex;
           align-items: center;
         }
@@ -55,7 +58,7 @@
         .bio-text {
           position: absolute;
           top: 0;
-          height: 200%;
+          height: 120%;
           z-index: 999;
           @include bp('desktop') {
             position: static;

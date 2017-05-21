@@ -76,16 +76,33 @@ header {
       }
     }
 
-    a {
-      display: none;
+    a.page-link {
+      opacity: 0;
+      display: block;
       font-family: "akzidenz-grotesk";
       font-size: .475em;
       padding: 0;
       text-align: center;
       text-decoration: none;
       text-transform: uppercase;
+      letter-spacing: .09em;
+      @include transition(all, .325s, ease-in);
       @include bp('desktop') {
         font-size: .8675em;
+      }
+
+      &.active {
+        opacity: 1;
+        @include transition(all, .325s, ease-in);
+      }
+    }
+  }
+
+  &:hover {
+    .mobile-links a.page-link {
+      @include bp('desktop') {
+        opacity: 1;
+        @include transition(all, .325s, ease-in);
       }
     }
   }
@@ -170,6 +187,9 @@ header {
   }
 }
 
+.index header a.page-link {
+  display: none !important;
+}
 
 .layered-logo {
   img {
