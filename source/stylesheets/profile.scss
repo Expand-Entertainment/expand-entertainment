@@ -1,107 +1,17 @@
 @import "mix";
-.talent-detail {
-  .container {
-    width: 100%;
-
-    .profile-row {
-      align-items: stretch;
-      display: flex;
-      flex-direction: column-reverse;
-      width: 100%;
-      padding-bottom: 10px;
-      @include bp('desktop') {
-        height: 100vh;
-        flex-direction: row-reverse;
-        padding: 0;
-      }
-
-      .left-col {
-        background: #ffffff;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-        text-align: center;
-        width: 100%;
-        @include bp('desktop') {
-          height: calc(100% - 10px);
-          width: 60%;
-        }
-
-        .info-box {
-          width: 100%;
-
-          h2 {
-            font-size: 1.25em;
-            margin-bottom: 30px;
-            letter-spacing: 1em;
-            font-family: "akzidenz-grotesk-extended";
-            text-transform: uppercase;
-          }
-
-          .bio {
-            margin: 0 auto 30px auto;
-            max-width: 400px;
-            display: none;
-            font-family: "akzidenz-grotesk";
-            font-size: .75em;
-            @include bp('desktop') {
-              display: block;
-            }
-          }
-
-
-        }
-      }
-
-      .right-col {
-        width: 100%;
-        @include bp('desktop') {
-          height: 100%;
-          width: 40%;
-        }
-
-        .main-image {
-          background: black;
-          height: 100%;
-          position: relative;
-          width: 100%;
-          @include bp('desktop') {
-            overflow: hidden;
-          }
-
-          img {
-            display: block;
-            width: 100%;
-            @include bp('desktop') {
-              height: 100%;
-              object-fit: cover;
-              position: absolute;
-              top: 0;
-              right: 0;
-              z-index: 10;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-
 .profile {
 
   .bio-section {
     display: block;
     margin-top: 60px;
     @include bp('desktop') {
-      margin-top: 0;
+      margin-top: 45px;
     }
 
     .bio-wrapper {
       height: calc(100vh - 60px);
       @include bp('desktop') {
-        height: calc(100vh);
+        height: calc(100vh - 45px);
         display: flex;
         align-items: center;
       }
@@ -165,7 +75,8 @@
         position: relative;
         @include bp('desktop') {
           display: flex;
-          height: 100vh;
+          height: 100%;
+          overflow: hidden;
         }
 
         img {

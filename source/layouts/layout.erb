@@ -10,9 +10,9 @@
     <script src="https://use.typekit.net/ubz5xau.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
-  <body class="<%= page_classes %>">
+  <body id="body" class="<%= page_classes %>">
 
-    <header id="header">
+    <header id="header" class="header">
       <div class="mobile-links">
         <div class="left">
           <%= link_to 'talent', '/talent.html', :class => 'page-link talent' %>
@@ -46,15 +46,22 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+  <%= javascript_include_tag 'headroom' %>
   <%= javascript_include_tag "site" %>
   <script>$(function($){ Expand.initialize(); });</script>
-  <!-- <script type="text/javascript">
-    window.addEventListener('load', function() {
-        var element = document.getElementById('homepage');
-        var hammertime = Hammer(element).on("tap", function(event) {
-          var linkContainer = document.getElementById('home-container');
-          linkContainer.classList.add('expanded');
-        })
-    }, false);
-  </script> -->
+  <script type="text/javascript">
+        // grab an element
+      var elem = document.getElementById("header");
+      var headroom = new Headroom(elem, {
+        "offset": 45,
+        "tolerance": 5,
+        "classes": {
+          "initial": "animated",
+          "pinned": "slideDown",
+          "unpinned": "slideUp"
+        }
+      });
+      // initialise
+      headroom.init();
+  </script>
 </html>

@@ -12,7 +12,6 @@ var Expand = {
 
       $("#initial-load").addClass("loaded");
       $("#initial-load").fadeOut(1000);
-
       // $(".logo").addClass("fade-in");
       // setTimeout(function(){
       //    $(".wordmark").addClass("fade-in");
@@ -36,6 +35,7 @@ var Expand = {
           Expand.toggleAbout();
         }
       });
+
 
       $('[data-behavior="toggle-talent"]').click(function() {
 
@@ -61,26 +61,6 @@ var Expand = {
       if ($('body').hasClass('talent') || $('body').hasClass('about') ) {
         $("a.layered-logo").removeAttr("href");
       }
-
-      var lastScrollTop = 0;
-
-      $(window).scroll(function(event){
-        if (window.innerWidth < 768) {
-          var st = $(this).scrollTop();
-
-          if (st > lastScrollTop){
-             if ($('.page-link').hasClass('active')) {
-               $('.page-link').removeClass('active');
-             }
-             $("header").fadeOut();
-          } else {
-              $('.mobile-links').find('.page-link').addClass('active');
-              $("header").fadeIn();
-          }
-
-          lastScrollTop = st;
-        }
-      });
     },
 
     resizeHandler: function() {

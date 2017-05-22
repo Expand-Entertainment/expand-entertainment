@@ -23,11 +23,6 @@ a {
 
 header {
   background: white;
-  left: 0;
-  padding: 10px;
-  position: fixed;
-  right: 0;
-  top: 0;
   height: 60px;
   width: 100%;
   z-index: 999999;
@@ -77,7 +72,6 @@ header {
     }
 
     a.page-link {
-      opacity: 0;
       display: block;
       font-family: "akzidenz-grotesk";
       font-size: .475em;
@@ -89,20 +83,6 @@ header {
       @include transition(all, .325s, ease-in);
       @include bp('desktop') {
         font-size: .8675em;
-      }
-
-      &.active {
-        opacity: 1;
-        @include transition(all, .325s, ease-in);
-      }
-    }
-  }
-
-  &:hover {
-    .mobile-links a.page-link {
-      @include bp('desktop') {
-        opacity: 1;
-        @include transition(all, .325s, ease-in);
       }
     }
   }
@@ -153,16 +133,11 @@ header {
   }
 }
 
-
 .index header {
   @include bp('desktop') {
     left: 0;
     margin: 0 auto;
   }
-}
-
-.profile header {
-  display: none;
 }
 
 .profile,
@@ -172,16 +147,8 @@ header {
 .contact {
   header {
     @include bp('desktop') {
-      display: block;
-      position: fixed;
-      background: transparent;
-      @include transition(all, .325s, ease-in);
       .wordmark-home {
         display: none;
-      }
-      &:hover {
-        background: white;
-        @include transition(all, .325s, ease-in);
       }
     }
   }
@@ -264,4 +231,23 @@ header {
       display: none;
     }
   }
+}
+
+.header {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 999999;
+}
+
+.header.animated.slideDown {
+  transform: translateY(0);
+  @include transition(all, .325s, ease-in);
+}
+
+.header.animated.slideUp {
+  transform: translateY(-100%);
+  @include transition(all, .325s, ease-in);
 }
