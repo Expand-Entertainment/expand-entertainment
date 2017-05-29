@@ -13,7 +13,6 @@ title: Talent Landing
       <div class="bio-text">
         <h1><%= talentProfile.fullName %></h1>
         <p class="bio"><span class="tab"></span><%= talentProfile.talentBio %></p>
-
         <div class="specs">
           <% if talentProfile.linkTypes %>
             <ul class="link-urls">
@@ -41,7 +40,6 @@ title: Talent Landing
                 </li>
               <% end %>
             </ul>
-
             <ul class="media-types">
               <% talentProfile.socialMediaNumberType.each do |type| %>
                 <li>
@@ -55,7 +53,6 @@ title: Talent Landing
     </div>
     <div class="bio-name"><%= talentProfile.fullName %></div>
   </div>
-
   <div class="bio-wrapper for-mobile">
     <div class="specs">
       <% if talentProfile.linkTypes %>
@@ -84,7 +81,6 @@ title: Talent Landing
             </li>
           <% end %>
         </ul>
-
         <ul class="media-types">
           <% talentProfile.socialMediaNumberType.each do |type| %>
             <li>
