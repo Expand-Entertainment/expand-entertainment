@@ -1,4 +1,4 @@
-set :markdown, parse_block_html: true
+
 activate :contentful do |f|
   f.space = { website: 'dtr3t57nrpyu'}
   f.access_token = ENV['CONTENTFUL_API_KEY']
@@ -42,12 +42,11 @@ page '/*.txt', layout: false
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
 
-# helpers do
-#   def some_helper
-#     'Helping'
-#   end
-# end
-
+helpers do
+  def markdown(text)
+    Tilt['markdown'].new { text }.render
+  end
+end
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
