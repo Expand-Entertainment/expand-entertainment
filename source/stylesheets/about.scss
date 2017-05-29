@@ -39,6 +39,7 @@
           @include bp('desktop') {
             display: flex;
             height: 100vh;
+            width: 100%;
           }
 
           img {
@@ -58,8 +59,9 @@
         .bio-text {
           position: absolute;
           top: 0;
-          height: 120%;
+          height: 100%;
           z-index: 999;
+          width: 100%;
           @include bp('desktop') {
             position: static;
             width: 50%;
@@ -74,18 +76,47 @@
             display: none;
             @include bp('desktop') {
               display: block;
+              font-family: "akzidenz-grotesk-extended";
+              text-transform: uppercase;
+              letter-spacing: .9em;
+              font-size: 1em;
+              line-height: 1.5em;
+              padding-left: .9em;
+              text-align: center;
             }
           }
 
           p {
             padding: 30px 20px 100px 20px;
-            margin-top: 120%;
-            background: pink;
-            opacity: .5;
+            background: rgba(0,0,0,.6);
+            font-family: "akzidenz-grotesk";
+            line-height: 1.4em;
+            font-size: 1.125em;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            color: white;
+            width: 100%;
             @include bp('desktop') {
               margin: 0;
               background: white;
               opacity: 1;
+              position: static;
+              color: black;
+              text-align: center;
+            }
+
+            .tab {
+              display: block;
+              height: 2px;
+              width: 7%;
+              background: #fff;
+              position: absolute;
+              top: -15px;
+              left: 0;
+              right: 0;
+              margin: 0 auto;
             }
           }
         }
@@ -99,6 +130,13 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          font-family: "akzidenz-grotesk-extended";
+          text-transform: uppercase;
+          letter-spacing: .9em;
+          font-size: 1em;
+          line-height: 1.5em;
+          padding-left: .9em;
+          text-align: center;
           @include bp('desktop') {
             display: none;
           }

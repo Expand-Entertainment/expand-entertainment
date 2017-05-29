@@ -12,7 +12,7 @@ title: Talent Landing
       <img src=<%= talentProfile.mainImage['url'] %> />
       <div class="bio-text">
         <h1><%= talentProfile.fullName %></h1>
-        <p><%= talentProfile.talentBio %> Aliquam consequat quam nec neque luctus interdum. Maecenas est tortor, lacinia eu mi ut, porta tincidunt ipsum. Ut dapibus nec nisl sed ullamcorper.</p>
+        <p class="bio"><span class="tab"></span><%= talentProfile.talentBio %></p>
 
         <div class="specs">
           <% if talentProfile.linkTypes %>
@@ -34,7 +34,7 @@ title: Talent Landing
                 </li>
               <% end %>
             </ul>
-            <ul class="media-types">
+            <ul class="media-types numbers">
               <% talentProfile.socialMediaNumbers.each do |type| %>
                 <li class="<%= hoverColor %>" style="color: <%= talentProfile.backgroundColor %>;">
                   <%= type %>
@@ -77,7 +77,7 @@ title: Talent Landing
             </li>
           <% end %>
         </ul>
-        <ul class="media-types">
+        <ul class="media-types numbers">
           <% talentProfile.socialMediaNumbers.each do |type| %>
             <li class="<%= hoverColor %>" style="color: <%= talentProfile.backgroundColor %>;">
               <%= type %>
