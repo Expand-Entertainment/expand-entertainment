@@ -1,0 +1,41 @@
+@import "mix";
+
+.info-page {
+  .map-section {
+    display: none;
+  }
+
+  .text {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 80%;
+      margin: 0 auto 30px auto;
+    }
+    ul li {
+      display: block;
+      font-family: "akzidenz-grotesk-extended";
+      font-size: 1.25em;
+    }
+  }
+
+  &.show-map {
+    .text {
+      display: none;
+    }
+
+    .map-section {
+      display: block;
+      margin-top: 45px;
+      @include bp('desktop') {
+        margin-top: 0;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

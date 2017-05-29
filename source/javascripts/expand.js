@@ -30,22 +30,22 @@ var Expand = {
       logoButton.on("tap", function(event) {
         if ($('body').hasClass('talent')) {
           Expand.toggleTalent();
+          $('.layered-logo').addClass('logo-expanded');
         }
         if ($('body').hasClass('about')) {
           Expand.toggleAbout();
+          $('.layered-logo').addClass('logo-expanded');
         }
       });
 
 
       $('[data-behavior="toggle-talent"]').click(function() {
-
         if ($('body').hasClass('talent')) {
           Expand.toggleTalent();
         }
         if ($('body').hasClass('about')) {
           Expand.toggleAbout();
         }
-
       });
 
 

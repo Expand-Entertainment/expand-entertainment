@@ -1,7 +1,12 @@
 <div class="info-page">
   <div class="text">
+    <%= image_tag 'expand-wordmark.svg', :class => 'wordmark'%>
     <% data.website.contact.each do |id, text| %>
-      <h2><%= text['contactPageText'] %></h2>
+      <%= markdown(text['contactPageText']) %>
     <% end %>
+  </div>
+
+  <div class="map-section">
+    <%= image_tag 'expand-map.svg', :class => 'map'%>
   </div>
 </div>

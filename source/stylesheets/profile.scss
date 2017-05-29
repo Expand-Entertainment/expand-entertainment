@@ -96,7 +96,7 @@
       }
 
       .bio-image {
-        height: 80%;
+        height: 70%;
         overflow: scroll;
         position: relative;
         @include bp('desktop') {
@@ -130,10 +130,10 @@
           position: static;
           width: 50%;
           height: 100vh;
-          padding: 20px;
+          padding: 60px 20px;
+          overflow: scroll;
           display: flex;
           align-items: center;
-          justify-content: center;
           flex-direction: column;
         }
 

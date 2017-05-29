@@ -64,6 +64,8 @@
         text-transform: uppercase;
         font-size: .75em;
         letter-spacing: .5em;
+        padding-left: .5em;
+        line-height: 1.3em;
         z-index: 20;
       }
 
@@ -117,6 +119,7 @@
         display: block;
         display: flex;
         height: 55px;
+        margin-bottom: 30px;
         text-decoration: none;
 
         &.desktop {
@@ -158,7 +161,15 @@
     }
 
     &.grid {
-      .row.for-grid { display: flex; align-items: flex-start; position: relative; z-index: 99999; }
+      .row.for-grid {
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        z-index: 99999; 
+        @include bp('desktop') {
+          margin-top: 45px;
+        }
+      }
       .row.for-list { display: none; }
     }
   }

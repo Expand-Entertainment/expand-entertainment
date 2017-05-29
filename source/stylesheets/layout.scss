@@ -96,12 +96,12 @@ header {
     }
     .wordmark-home {
       display: none;
-      width: 30%;
+      width: 50%;
       position: absolute;
       left: 0;
       right: 0;
       margin: 0 auto;
-      top: 0;
+      top: 10px;
       @include bp('desktop') {
         display: block;
       }
@@ -118,16 +118,28 @@ header {
       display: inline;
       height: 35px;
       position: absolute;
-      left: -5px;
+      left: 18px;
       right: 0;
       margin: 0 auto;
       top: 8px;
       width: 30px;
       @include bp('desktop') {
-        top: 3px;
+        top: 6px;
         left: auto;
-        right: 60px;
+        right: 35px;
         bottom: 5px;
+      }
+
+      &.logo-expanded {
+        top: 12px;
+        left: 32px;
+        @include transition(all, .325s, ease-in);
+        @include bp('desktop') {
+          top: 6px;
+          right: 35px;
+          bottom: 5px;
+          left: auto;
+        }
       }
     }
   }
@@ -190,6 +202,7 @@ header {
 
   &:hover,
   &.logo-expanded {
+
     img {
       margin-left: -46px;
       margin-top: 0 !important;
