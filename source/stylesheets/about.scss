@@ -10,6 +10,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "akzidenz-grotesk-extended";
+    font-size: .75em;
   }
 
   &.show-bios {
@@ -33,7 +35,7 @@
         }
 
         .bio-image {
-          height: 80%;
+          height: 70%;
           overflow: scroll;
           position: relative;
           @include bp('desktop') {
@@ -64,6 +66,7 @@
           width: 100%;
           @include bp('desktop') {
             position: static;
+            padding-top: 45px;
             width: 50%;
             height: 100vh;
             display: flex;
@@ -124,7 +127,7 @@
         .bio-name {
           background: white;
           width: 100%;
-          height: 20%;
+          height: 30%;
           position: relative;
           z-index: 999;
           display: flex;

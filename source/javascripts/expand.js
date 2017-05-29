@@ -36,6 +36,10 @@ var Expand = {
           Expand.toggleAbout();
           $('.layered-logo').addClass('logo-expanded');
         }
+        if ($('body').hasClass('contact')) {
+          Expand.toggleContact();
+          $('.layered-logo').addClass('logo-expanded');
+        }
       });
 
 
@@ -45,6 +49,9 @@ var Expand = {
         }
         if ($('body').hasClass('about')) {
           Expand.toggleAbout();
+        }
+        if ($('body').hasClass('contact')) {
+          Expand.toggleContact();
         }
       });
 
@@ -58,7 +65,7 @@ var Expand = {
         $(".layered-logo").addClass("logo-expanded");
       });
 
-      if ($('body').hasClass('talent') || $('body').hasClass('about') ) {
+      if ($('body').hasClass('talent') || $('body').hasClass('about')  || $('body').hasClass('contact')) {
         $("a.layered-logo").removeAttr("href");
       }
     },
@@ -73,6 +80,10 @@ var Expand = {
 
     toggleAbout: function() {
       $("div.info-page").toggleClass("show-bios");
+    },
+
+    toggleContact: function() {
+      $("div.info-page").toggleClass("show-map");
     },
 
     expandLinks: function(e) {

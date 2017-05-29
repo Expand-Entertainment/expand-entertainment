@@ -1,41 +1,55 @@
 @import "mix";
-
-.info-page {
-  .map-section {
-    display: none;
-  }
-
-  .text {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      width: 80%;
-      margin: 0 auto 30px auto;
-    }
-    ul li {
-      display: block;
-      font-family: "akzidenz-grotesk-extended";
-      font-size: 1.25em;
-    }
-  }
-
-  &.show-map {
-    .text {
+.contact {
+  .info-page {
+    .map-section {
       display: none;
     }
 
-    .map-section {
-      display: block;
-      margin-top: 45px;
-      @include bp('desktop') {
-        margin-top: 0;
+    .text {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+      img {
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto 30px auto;
+      }
+      ul li {
+        display: block;
+        font-family: "akzidenz-grotesk-extended";
+        font-size: 1em;
+        line-height: 1.6em;
+      }
+    }
+
+    &.show-map {
+      .text {
+        display: none;
       }
 
-      img {
+      .map-section {
+        display: block;
+        margin-top: 45px;
         width: 100%;
+        @include bp('desktop') {
+          margin-top: 0;
+        }
+
+        img {
+          display: block;
+          max-width: 600px;
+          margin: 30% auto 0 auto;
+          width: 100%;
+          @include bp('desktop') {
+            margin-top: 10%;
+          }
+        }
       }
     }
   }
+
 }
