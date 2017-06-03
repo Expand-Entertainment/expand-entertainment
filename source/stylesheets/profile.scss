@@ -79,6 +79,7 @@
 
         ul.media-types.titles {
           padding-top: 20px;
+
           li {
             font-size: .5em;
           }
@@ -90,6 +91,7 @@
           display: none;
           @include bp('desktop') {
             display: flex;
+            margin-bottom: 10px;
           }
         }
       }
@@ -130,11 +132,8 @@
           position: static;
           width: 50%;
           height: 100vh;
-          padding: 60px 20px;
+          padding: 120px 20px;
           overflow: scroll;
-          display: flex;
-          align-items: center;
-          flex-direction: column;
         }
 
         h1,
@@ -154,6 +153,7 @@
           letter-spacing: .9em;
           text-align: center;
         }
+
         p.bio {
           padding: 30px 20px 100px 20px;
           background: rgba(0,0,0,.6);
