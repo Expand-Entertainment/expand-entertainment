@@ -57,6 +57,7 @@
       var visited = $.cookie("visited")
 
       if (visited == null) {
+        $("header").hide();
         $(".logo").addClass("fade-in");
         setTimeout(function(){
            $(".wordmark").addClass("fade-in");
@@ -64,10 +65,11 @@
          setTimeout(function(){
            $("#initial-load").addClass("loaded");
            $("#initial-load").fadeOut(400);
-        }, 7000);
+           $("header").fadeIn(800);
+        }, 5000);
       } else {
         $("#initial-load").addClass("loaded");
-        $("#initial-load").fadeOut(1000);
+        $("#initial-load").hide();
       }
 
       $.cookie('visited', 'yes', { expires: 1, path: '/' });
