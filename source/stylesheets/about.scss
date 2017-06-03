@@ -60,19 +60,17 @@
 
         .bio-text {
           position: absolute;
-          top: 0;
+          top: 90%;
           height: 100%;
           z-index: 999;
           width: 100%;
           @include bp('desktop') {
             position: static;
-            padding-top: 45px;
+            padding-top: 80px;
             width: 50%;
             height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            overflow: scroll;
+            padding: 120px 20px;
           }
 
           h1 {
@@ -96,7 +94,7 @@
             line-height: 1.4em;
             font-size: 1.125em;
             position: absolute;
-            top: 100%;
+            top: 10%;
             left: 0;
             right: 0;
             color: white;

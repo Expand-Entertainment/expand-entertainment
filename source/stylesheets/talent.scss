@@ -67,6 +67,7 @@
         padding-left: .5em;
         line-height: 1.3em;
         z-index: 20;
+        @include transition(all, .225s, ease-in);
       }
 
       .profile-image {
@@ -89,6 +90,7 @@
           width: 100%;
           -o-object-fit: cover;
           object-fit: cover;
+          @include transition(all, .125s, ease-in-out);
         }
       }
 
@@ -97,10 +99,12 @@
         h2 {
           color: white;
           display: block;
+          @include transition(all, .125s, ease-in-out);
         }
 
         img {
           opacity: .5;
+          @include transition(all, .125s, ease-in-out);
         }
       }
     }
