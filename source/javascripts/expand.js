@@ -47,6 +47,10 @@ var Expand = {
       if ($('body').hasClass('talent') || $('body').hasClass('about')  || $('body').hasClass('contact')) {
         $("a.layered-logo").removeAttr("href");
       }
+
+      $(window).scroll(function() {
+
+      });
     },
 
     resizeHandler: function(e) {

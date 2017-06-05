@@ -59,6 +59,9 @@
                 &.tapestry {
                   color: #b06473;
                 }
+                &.yellow {
+                  color: #cf9d31;
+                }
               }
             }
           }
@@ -154,7 +157,7 @@
           text-align: center;
         }
 
-        p.bio {
+        .bio {
           padding: 30px 20px 100px 20px;
           background: rgba(0,0,0,.6);
           color: white;
@@ -188,6 +191,16 @@
             left: 0;
             right: 0;
             margin: 0 auto;
+          }
+
+          a {
+            cursor: pointer;
+          }
+
+          &.yellow {
+            a:hover {
+              color: #cf9d31;
+            }
           }
         }
       }

@@ -5,6 +5,9 @@ title: Talent Landing
 <% if color === '#b06473' %>
   <% hoverColor = 'tapestry' %>
 <% end %>
+<% if color === '#cf9d31' %>
+  <% hoverColor = 'yellow' %>
+<% end %>
 
 <div class="bio-section">
   <div class="bio-wrapper">
@@ -12,7 +15,10 @@ title: Talent Landing
       <img src=<%= talentProfile.mainImage['url'] %> />
       <div class="bio-text">
         <h1><%= talentProfile.fullName %></h1>
-        <p class="bio"><span class="tab"></span><%= talentProfile.talentBio %></p>
+        <div class="bio <%= hoverColor %>">
+          <span class="tab"></span>
+          <%= markdown(talentProfile.talentBio) %>
+        </div>
         <div class="specs">
           <% if talentProfile.linkTypes %>
             <ul class="link-urls">
