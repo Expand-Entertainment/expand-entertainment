@@ -54,7 +54,7 @@
       }
 
       h2 {
-        bottom: 15%;
+        bottom: 45%;
         display: none;
         left: 0;
         margin: 0 auto;
@@ -62,7 +62,7 @@
         right: 0;
         text-align: center;
         text-transform: uppercase;
-        font-size: .75em;
+        font-size: .875em;
         letter-spacing: .5em;
         padding-left: .5em;
         line-height: 1.3em;
@@ -114,16 +114,16 @@
       display: block;
       padding-left: 10px;
       @include bp('desktop') {
-        padding-top: 45px;
+        padding: 100px 100px 150px 100px;
       }
 
-      a {
+      a.grid-item {
         align-items: center;
         cursor: pointer;
         display: block;
         display: flex;
-        height: 55px;
-        margin-bottom: 30px;
+        height: 45px;
+        margin-bottom: 0px;
         text-decoration: none;
 
         &.desktop {
@@ -160,6 +160,57 @@
         @include bp('desktop') {
           font-size: 1.25em;
           letter-spacing: 1.5em;
+        }
+      }
+
+      a {
+        &.rose {
+          &:hover h2 {color: #C0686C}
+        }
+        &.blush-rose {
+          &:hover h2 {color: #964447}
+        }
+        &.crimson {
+          &:hover h2 {color: #721014}
+        }
+        &.carmine {
+          &:hover h2 {color: #952221}
+        }
+        &.orange {
+          &:hover h2 {color: #BB5827}
+        }
+        &.tangerine {
+          &:hover h2 {color: #CB7329}
+        }
+        &.golden-rod {
+          &:hover h2 {color: #D9A628}
+        }
+        &.lemon {
+          &:hover h2 {color: #F7DA37}
+        }
+        &.kermit {
+          &:hover h2 {color: #146A3A}
+        }
+        &.hunter {
+          &:hover h2 {color: #224337}
+        }
+        &.navy {
+          &:hover h2 {color: #25295F}
+        }
+        &.marine {
+          &:hover h2 {color: #13648F}
+        }
+        &.robin-egg {
+          &:hover h2 {color: #7A99B3}
+        }
+        &.deep-purple {
+          &:hover h2 {color: #42174C}
+        }
+        &.lilac {
+          &:hover h2 {color: #9A799B}
+        }
+        &.lavender {
+          &:hover h2 {color: #7A5BA6}
         }
       }
     }

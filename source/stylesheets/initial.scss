@@ -25,7 +25,7 @@
 
       &.logo {
         margin-bottom: 30px;
-        width: 25%;
+        width: 15%;
         &.fade-in {
           opacity: 1;
           @include transition(all, 1s, ease-in);
@@ -33,7 +33,7 @@
       }
 
       &.wordmark {
-        width: 50%;
+        width: 30%;
         &.fade-in {
           opacity: 1;
           @include transition(all, 2s, ease-in);

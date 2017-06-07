@@ -94,9 +94,10 @@ header {
     @include bp('desktop') {
       width: 0;
     }
+
     .wordmark-home {
       display: none;
-      width: 50%;
+      width: 30%;
       position: absolute;
       left: 0;
       right: 0;
@@ -124,7 +125,7 @@ header {
       top: 8px;
       width: 30px;
       @include bp('desktop') {
-        top: 6px;
+        top: 4px;
         left: auto;
         right: 35px;
         bottom: 5px;

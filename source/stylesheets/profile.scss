@@ -56,11 +56,53 @@
               text-transform: uppercase;
 
               &:hover {
-                &.tapestry {
-                  color: #b06473;
+                &.rose {
+                  color: #C0686C
                 }
-                &.yellow {
-                  color: #cf9d31;
+                &.blush-rose {
+                  color: #964447
+                }
+                &.crimson {
+                  color: #721014
+                }
+                &.carmine {
+                  color: #952221
+                }
+                &.orange {
+                  color: #BB5827
+                }
+                &.tangerine {
+                  color: #CB7329
+                }
+                &.golden-rod {
+                  color: #D9A628
+                }
+                &.lemon {
+                  color: #F7DA37
+                }
+                &.kermit {
+                  color: #146A3A
+                }
+                &.hunter {
+                  color: #224337
+                }
+                &.navy {
+                  color: #25295F
+                }
+                &.marine {
+                  color: #13648F
+                }
+                &.robin-egg {
+                  color: #7A99B3
+                }
+                &.deep-purple {
+                  color: #42174C
+                }
+                &.lilac {
+                  color: #9A799B
+                }
+                &.lavender {
+                  color: #7A5BA6
                 }
               }
             }
@@ -197,10 +239,53 @@
             cursor: pointer;
           }
 
-          &.yellow {
-            a:hover {
-              color: #cf9d31;
-            }
+          &.rose {
+            a:hover {color: #C0686C}
+          }
+          &.blush-rose {
+            a:hover {color: #964447}
+          }
+          &.crimson {
+            a:hover {color: #721014}
+          }
+          &.carmine {
+            a:hover {color: #952221}
+          }
+          &.orange {
+            a:hover {color: #BB5827}
+          }
+          &.tangerine {
+            a:hover {color: #CB7329}
+          }
+          &.golden-rod {
+            a:hover {color: #D9A628}
+          }
+          &.lemon {
+            a:hover {color: #F7DA37}
+          }
+          &.kermit {
+            a:hover {color: #146A3A}
+          }
+          &.hunter {
+            a:hover {color: #224337}
+          }
+          &.navy {
+            a:hover {color: #25295F}
+          }
+          &.marine {
+            a:hover {color: #13648F}
+          }
+          &.robin-egg {
+            a:hover {color: #7A99B3}
+          }
+          &.deep-purple {
+            a:hover {color: #42174C}
+          }
+          &.lilac {
+            a:hover {color: #9A799B}
+          }
+          &.lavender {
+            a:hover {color: #7A5BA6}
           }
         }
       }

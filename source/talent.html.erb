@@ -17,11 +17,60 @@ title: Talent Landing
 
     <div class="row for-list">
       <% data.website.talentProfile.each do |id, talentProfile| %>
+      <% color = talentProfile.backgroundColor %>
+      <% if color === '#C0686C' %>
+        <% hoverColor = 'rose' %>
+      <% end %>
+      <% if color === '#964447' %>
+        <% hoverColor = 'blush-rose' %>
+      <% end %>
+      <% if color === '#721014' %>
+        <% hoverColor = 'crimson' %>
+      <% end %>
+      <% if color === '#952221' %>
+        <% hoverColor = 'carmine' %>
+      <% end %>
+      <% if color === '#BB5827' %>
+        <% hoverColor = 'orange' %>
+      <% end %>
+      <% if color === '#CB7329' %>
+        <% hoverColor = 'tangerine' %>
+      <% end %>
+      <% if color === '#D9A628' %>
+        <% hoverColor = 'golden-rod' %>
+      <% end %>
+      <% if color === '#F7DA37' %>
+        <% hoverColor = 'lemon' %>
+      <% end %>
+      <% if color === '#146A3A' %>
+        <% hoverColor = 'kermit' %>
+      <% end %>
+      <% if color === '#224337' %>
+        <% hoverColor = 'hunter' %>
+      <% end %>
+      <% if color === '#25295F' %>
+        <% hoverColor = 'navy' %>
+      <% end %>
+      <% if color === '#13648F' %>
+        <% hoverColor = 'marine' %>
+      <% end %>
+      <% if color === '#7A99B3' %>
+        <% hoverColor = 'robin-egg' %>
+      <% end %>
+      <% if color === '#42174C' %>
+        <% hoverColor = 'deep-purple' %>
+      <% end %>
+      <% if color === '#9A799B' %>
+        <% hoverColor = 'lilac' %>
+      <% end %>
+      <% if color === '#7A5BA6' %>
+        <% hoverColor = 'lavender' %>
+      <% end %>
         <div data-aos-delay="200" data-aos="zoom-in-right" data-aos-offset="80" data-aos-easing="linear" data-aos-duration="400">
-        <a href="profile/<%= talentProfile['slug'] %>.html" class="grid-item">
-          <h2><%= talentProfile['fullName'] %></h2>
-        </a>
-      </div>
+          <a href="profile/<%= talentProfile['slug'] %>.html" class="grid-item <%= hoverColor %>">
+            <h2><%= talentProfile['fullName'] %></h2>
+          </a>
+        </div>
       <% end %>
     </div>
   </div>
