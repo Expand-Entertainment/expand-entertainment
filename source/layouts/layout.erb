@@ -57,11 +57,10 @@
       var visited = $.cookie("visited")
 
       if (visited == null) {
-        $("header").hide();
         $(".logo").addClass("fade-in");
         setTimeout(function(){
            $(".wordmark").addClass("fade-in");
-         }, 2000);
+         }, 1200);
          setTimeout(function(){
            $("#initial-load").addClass("loaded");
            $("#initial-load").fadeOut(400);
@@ -70,6 +69,7 @@
       } else {
         $("#initial-load").addClass("loaded");
         $("#initial-load").hide();
+        $("header").fadeIn();
       }
 
       $.cookie('visited', 'yes', { expires: 1, path: '/' });

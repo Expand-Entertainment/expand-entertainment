@@ -1,13 +1,20 @@
 @import "mix";
 .creative {
   .info-page {
-    height: calc(100vh - 60px);
-    margin-top: 60px;
-    display: flex;
-    align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 120px 20px;
     font-family: "akzidenz-grotesk-extended";
     font-size: .75em;
+    font-weight: 300;
+    text-align: center;
+    @include bp('desktop') {
+      height: 100vh;
+      font-size: 1em;
+      max-width: 70%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }

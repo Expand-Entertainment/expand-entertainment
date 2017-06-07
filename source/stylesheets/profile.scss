@@ -35,7 +35,6 @@
           height: auto;
         }
 
-
         ul.link-types,
         ul.link-urls,
         ul.media-types {
@@ -45,9 +44,8 @@
 
           li {
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 17px;
             font-family: "akzidenz-grotesk";
-            font-size: .75em;
             width: 20%;
 
             a {
@@ -127,6 +125,20 @@
 
           li {
             font-size: .5em;
+            @include bp('desktop') {
+              font-size: .75em;
+              font-weight: 700;
+            }
+          }
+        }
+
+        ul.media-types.metric {
+          li {
+            font-size: .675em;
+            @include bp('desktop') {
+              font-size: .75em;
+              font-weight: 700;
+            }
           }
         }
 
@@ -174,7 +186,7 @@
         z-index: 999;
         width: 100%;
         @include bp('desktop') {
-          position: static;
+          position: relative;
           width: 50%;
           height: 100vh;
           padding: 120px 20px;
@@ -197,6 +209,9 @@
           line-height: 1.3em;
           letter-spacing: .9em;
           text-align: center;
+          @include bp('desktop') {
+            margin-bottom: 32px;
+          }
         }
 
         .bio {
@@ -217,7 +232,7 @@
             background: white;
             position: static;
             color: #000;
-            margin: 30px auto;
+            margin: 8px auto 10px auto;
             text-align: center;
             padding: 0;
             opacity: 1;
@@ -293,12 +308,11 @@
       .bio-name {
         background: white;
         width: 100%;
-        height: 25%;
+        height: 55%;
         position: relative;
         z-index: 999;
         display: flex;
         align-items: flex-start;
-        justify-content: center;
         flex-direction: column;
 
         @include bp('desktop') {
@@ -313,7 +327,7 @@
           font-size: 1em;
           line-height: 1.5em;
           padding-left: .9em;
-          padding-top: 10px;
+          padding-top: 20px;
           width: 100%;
         }
 
@@ -322,5 +336,70 @@
         }
       }
     }
+  }
+}
+
+.border-el {
+  height: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  z-index: 9999;
+  @include bp('desktop') {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+  }
+
+  &.rose {
+    background: #C0686C
+  }
+  &.blush-rose {
+    background: #964447
+  }
+  &.crimson {
+    background: #721014
+  }
+  &.carmine {
+    background: #952221
+  }
+  &.orange {
+    background: #BB5827
+  }
+  &.tangerine {
+    background: #CB7329
+  }
+  &.golden-rod {
+    background: #D9A628
+  }
+  &.lemon {
+    background: #F7DA37
+  }
+  &.kermit {
+    background: #146A3A
+  }
+  &.hunter {
+    background: #224337
+  }
+  &.navy {
+    background: #25295F
+  }
+  &.marine {
+    background: #13648F
+  }
+  &.robin-egg {
+    background: #7A99B3
+  }
+  &.deep-purple {
+    background: #42174C
+  }
+  &.lilac {
+    background: #9A799B
+  }
+  &.lavender {
+    background: #7A5BA6
   }
 }

@@ -1,7 +1,7 @@
 
 activate :contentful do |f|
   f.space = { website: 'dtr3t57nrpyu'}
-  f.access_token = ENV['CONTENTFUL_API_KEY']
+  f.access_token = '01948232b081b50b6214b25597dd174b631c26803625ba1fe61fdac7864f9e56'
   f.rebuild_on_webhook = true
   f.content_types = { talentProfile: 'talentProfile', contact: 'contact', about: 'about', creative: 'creative' }
 end

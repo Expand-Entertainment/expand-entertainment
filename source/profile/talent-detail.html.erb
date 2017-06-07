@@ -55,24 +55,30 @@ title: Talent Landing
   <div class="bio-wrapper">
     <div class="bio-image">
       <img src=<%= talentProfile.mainImage['url'] %> />
+      <div class="border-el <%= hoverColor %>"></div>
       <div class="bio-text">
         <h1><%= talentProfile.fullName %></h1>
-        <div class="bio <%= hoverColor %>">
-          <span class="tab"></span>
-          <%= markdown(talentProfile.talentBio) %>
-        </div>
+
         <div class="specs">
           <% if talentProfile.linkTypes %>
             <ul class="link-urls">
               <% talentProfile.linkTypes.zip(talentProfile.urlsForLinks).each do |link, url| %>
                 <li>
-                  <a class="<%= hoverColor %>" target="_blank" href="<%= url %>">
+                  <a class="<%= hoverColor %>" target="_blank" href="http://<%= url %>">
                     <p><%= link %></p>
                   </a>
                 </li>
               <% end %>
             </ul>
           <% end %>
+        </div>
+
+        <div class="bio <%= hoverColor %>">
+          <span class="tab"></span>
+          <%= markdown(talentProfile.talentBio) %>
+        </div>
+        <div class="specs">
+
           <% if talentProfile.socialMediaTypes %>
             <ul class="media-types titles">
               <% talentProfile.socialMediaTypes.each do |type| %>
@@ -88,7 +94,7 @@ title: Talent Landing
                 </li>
               <% end %>
             </ul>
-            <ul class="media-types">
+            <ul class="media-types metric">
               <% talentProfile.socialMediaNumberType.each do |type| %>
                 <li>
                   <%= type %>
@@ -119,7 +125,7 @@ title: Talent Landing
                 </li>
               <% end %>
             </ul>
-            <ul class="media-types">
+            <ul class="media-types metric">
               <% talentProfile.socialMediaNumberType.each do |type| %>
                 <li>
                   <%= type %>

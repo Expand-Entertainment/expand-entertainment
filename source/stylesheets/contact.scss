@@ -13,16 +13,26 @@
       flex-direction: column;
       text-align: center;
       width: 100%;
+
       img {
-        max-width: 700px;
-        width: 100%;
-        margin: 0 auto 30px auto;
+        max-width: 300px;
+        width: 90%;
+        margin: 0 auto 20px auto;
+        @include bp('desktop') {
+          max-width: 450px;
+        }
       }
+
       ul li {
         display: block;
         font-family: "akzidenz-grotesk-extended";
         font-size: 1em;
-        line-height: 1.6em;
+        line-height: 1.8em;
+
+        &:last-child {
+          font-weight: 700;
+          margin-top: 20px;
+        }
       }
     }
 
@@ -42,11 +52,8 @@
         img {
           display: block;
           max-width: 600px;
-          margin: 30% auto 0 auto;
+          margin: 0 auto;
           width: 100%;
-          @include bp('desktop') {
-            margin-top: 10%;
-          }
         }
       }
     }
