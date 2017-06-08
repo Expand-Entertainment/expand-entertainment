@@ -131,6 +131,7 @@ header {
       margin: 0 auto;
       top: 8px;
       width: 30px;
+      @include transition(all, .325s, ease-in);
       @include bp('desktop') {
         top: 4px;
         left: auto;

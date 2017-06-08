@@ -63,6 +63,7 @@ var Expand = {
           $(".creative").animate({left: '0', bottom: '0'}, 560);
           $(".contact").animate({right: '0', bottom: '0'}, 560);
           $(".layered-logo").addClass("logo-expanded");
+          $(".tagline").fadeIn(650);
         });
       } else {
         if ($('body').hasClass('index')) {
