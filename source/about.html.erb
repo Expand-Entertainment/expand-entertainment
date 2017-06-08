@@ -1,7 +1,7 @@
 <div class="info-page">
   <div class="text">
     <% data.website.about.each do |id, text| %>
-      <h2><%= text['aboutPageText'] %></h2>
+      <h2><%= markdown(text['aboutPageText']) %></h2>
     <% end %>
   </div>
   <div class="bio-section">

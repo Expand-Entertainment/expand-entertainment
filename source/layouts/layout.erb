@@ -48,43 +48,27 @@
   crossorigin="anonymous"></script>
   <%= javascript_include_tag 'cookie' %>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-  <%= javascript_include_tag 'headroom' %>
   <script src="https://cdn.rawgit.com/michalsnik/aos/2.0.1/dist/aos.js"></script>
   <%= javascript_include_tag "site" %>
   <script>$(function($){ Expand.initialize(); });</script>
   <script type="text/javascript">
-      // check cookie
-      var visited = $.cookie("visited")
-
-      if (visited == null) {
-        $(".logo").addClass("fade-in");
-        setTimeout(function(){
-           $(".wordmark").addClass("fade-in");
-         }, 1200);
-         setTimeout(function(){
-           $("#initial-load").addClass("loaded");
-           $("#initial-load").fadeOut(400);
-           $("header").fadeIn(800);
-        }, 5000);
-      } else {
-        $("#initial-load").addClass("loaded");
-        $("#initial-load").hide();
-        $("header").fadeIn();
-      }
-
-      $.cookie('visited', 'yes', { expires: 1, path: '/' });
-
-      var elem = document.getElementById("header");
-      var headroom = new Headroom(elem, {
-        "offset": 45,
-        "tolerance": 5,
-        "classes": {
-          "initial": "animated",
-          "pinned": "slideDown",
-          "unpinned": "slideUp"
-        }
-      });
-      headroom.init();
-      AOS.init();
+    var visited = $.cookie("visited")
+    if (visited == null) {
+      $(".logo").addClass("fade-in");
+      setTimeout(function(){
+         $(".wordmark").addClass("fade-in");
+       }, 1200);
+       setTimeout(function(){
+         $("#initial-load").addClass("loaded");
+         $("#initial-load").fadeOut(400);
+         $("header").fadeIn(800);
+      }, 5000);
+    } else {
+      $("#initial-load").addClass("loaded");
+      $("#initial-load").hide();
+      $("header").fadeIn();
+    }
+    $.cookie('visited', 'yes', { expires: 1, path: '/' });
+    AOS.init();
   </script>
 </html>

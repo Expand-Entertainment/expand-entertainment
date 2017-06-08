@@ -28,7 +28,7 @@
     @include bp('desktop') {
       margin-top: 0;
       padding: 0;
-      width: 85%;
+      width: 100%;
     }
 
     .row {
@@ -42,14 +42,23 @@
         font-family: "akzidenz-grotesk-extended";
         font-weight: 300;
       }
+
+      &.for-grid {
+        @include bp('desktop') {
+          width: 85%;
+        }
+      }
     }
 
     .row.for-grid .grid-item {
       height: calc(100% - 58px);
       position: relative;
       width: 100%;
-
       @include bp('desktop') {
+        height: 50%;
+        width: 33.33%;
+      }
+      @include bp('desktop-med') {
         height: 50%;
         width: 25%;
       }
@@ -64,7 +73,7 @@
         text-align: center;
         text-transform: uppercase;
         letter-spacing: .5em;
-        padding-left: .5em;
+        padding: 0 1em 0 .875em;
         line-height: 1.3em;
         z-index: 20;
         @include transition(all, .225s, ease-in);
