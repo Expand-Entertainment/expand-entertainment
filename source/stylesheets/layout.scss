@@ -48,7 +48,10 @@ header {
       justify-content: space-between;
       height: 100%;
       @include bp('desktop') {
+        opacity: 0;
         justify-content: space-around;
+        z-index: 99;
+        @include transition(all, .325s, ease-in);
       }
     }
 
@@ -98,7 +101,7 @@ header {
 
     .wordmark-home {
       display: none;
-      width: 450px;
+      width: 458px;
       position: absolute;
       left: 0;
       right: 0;
@@ -106,6 +109,9 @@ header {
       top: 10px;
       @include bp('desktop') {
         display: block;
+        opacity: 1;
+        z-index: 9;
+        @include transition(all, .325s, ease-in);
       }
 
       img {
@@ -145,28 +151,46 @@ header {
       }
     }
   }
+
+  &:hover {
+    .wordmark-home {
+      opacity: 0;
+      @include transition(all, .325s, ease-in);
+    }
+    .mobile-links {
+      .left,
+      .right {
+        opacity: 1;
+        @include transition(all, .325s, ease-in);
+      }
+    }
+  }
 }
 
 .index header {
   @include bp('desktop') {
     left: 0;
     margin: 0 auto;
-  }
-}
-
-.profile,
-.talent,
-.about,
-.creative,
-.contact {
-  header {
-    @include bp('desktop') {
-      .wordmark-home {
-        display: none;
-      }
+    .wordmark-home {
+      display: block !important;
+      opacity: 1;
     }
   }
 }
+
+// .profile,
+// .talent,
+// .about,
+// .creative,
+// .contact {
+//   header {
+//     @include bp('desktop') {
+//       .wordmark-home {
+//         display: none;
+//       }
+//     }
+//   }
+// }
 
 .index header a.page-link {
   display: none !important;
