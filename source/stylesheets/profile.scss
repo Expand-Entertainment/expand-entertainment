@@ -3,13 +3,13 @@
 
   .bio-section {
     display: block;
-    margin-top: 60px;
 
     .bio-wrapper {
-      height: calc(100vh - 60px);
+      height: calc(100vh - 50px);
+      margin-top: 50px;
 
       @include bp('desktop') {
-        height: calc(100vh - 60px);
+        height: calc(100vh - 70px);
         display: flex;
         align-items: center;
       }
@@ -237,7 +237,7 @@
           position: fixed;
           left: 0;
           right: 0;
-          top: 80px;
+          top: 0px;
           height: 100%;
           width: 100%;
           object-fit: cover;

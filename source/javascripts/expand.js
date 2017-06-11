@@ -48,6 +48,7 @@ var Expand = {
           $(".about").animate({right: '0', top: '0'}, 400);
           $(".creative").animate({left: '0', bottom: '0'}, 400);
           $(".contact").animate({right: '0', bottom: '0'}, 400);
+          $(".tagline").delay(200).fadeIn(650);
         }
       }
     },

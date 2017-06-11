@@ -32,7 +32,7 @@
 
     .bio-section {
       display: block;
-      margin-top: 60px;
+      margin-top: 50px;
       @include bp('desktop') {
         margin-top: 70px;
       }
@@ -57,7 +57,7 @@
       }
 
       .bio-wrapper {
-        height: calc(100vh - 60px);
+        height: calc(100vh - 50px);
         @include bp('desktop') {
           height: calc(100vh - 70px);
           display: flex;
