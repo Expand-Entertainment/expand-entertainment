@@ -35,10 +35,10 @@ var Expand = {
       if (window.innerWidth > 768) {
         $("#homepage").one('mousemove', function(e) {
           Expand.expandLinks();
-          $(".talent").animate({left: '0', top: '0'}, 560);
-          $(".about").animate({right: '0', top: '0'}, 560);
-          $(".creative").animate({left: '0', bottom: '0'}, 560);
-          $(".contact").animate({right: '0', bottom: '0'}, 560);
+          $(".talent").animate({left: '0', top: '0'}, 500);
+          $(".about").animate({right: '0', top: '0'}, 500);
+          $(".creative").animate({left: '0', bottom: '0'}, 500);
+          $(".contact").animate({right: '0', bottom: '0'}, 500);
           $(".tagline").delay(800).fadeIn(650);
         });
       } else {
