@@ -59,34 +59,24 @@ title: Talent Landing
       <div class="bio-text">
         <h1><%= talentProfile.fullName %></h1>
 
+        <div class="bio <%= hoverColor %>">
+          <span class="tab"></span>
+          <%= markdown(talentProfile.talentBio) %>
+        </div>
+
         <div class="specs">
           <% if talentProfile.linkTypes %>
             <ul class="link-urls">
               <% talentProfile.linkTypes.zip(talentProfile.urlsForLinks).each do |link, url| %>
                 <li>
-                  <a class="<%= hoverColor %>" target="_blank" href="http://<%= url %>">
-                    <p><%= link %></p>
+                  <a class="<%= link.downcase %> <%= hoverColor %>" target="_blank" href="http://<%= url %>">
                   </a>
                 </li>
               <% end %>
             </ul>
           <% end %>
-        </div>
 
-        <div class="bio <%= hoverColor %>">
-          <span class="tab"></span>
-          <%= markdown(talentProfile.talentBio) %>
-        </div>
-        <div class="specs">
-
-          <% if talentProfile.socialMediaTypes %>
-            <ul class="media-types titles">
-              <% talentProfile.socialMediaTypes.each do |type| %>
-                <li>
-                  <%= type %>
-                </li>
-              <% end %>
-            </ul>
+          <% if talentProfile.socialMediaNumbers %>
             <ul class="media-types numbers">
               <% talentProfile.socialMediaNumbers.each do |type| %>
                 <li class="<%= hoverColor %>" style="color: <%= talentProfile.backgroundColor %>;">
@@ -105,19 +95,24 @@ title: Talent Landing
         </div>
       </div>
     </div>
+
     <div class="bio-name">
       <h2><%= talentProfile.fullName %></h2>
 
       <div class="mobile-specs">
         <div class="specs">
-          <% if talentProfile.socialMediaTypes %>
-            <ul class="media-types titles">
-              <% talentProfile.socialMediaTypes.each do |type| %>
+          <% if talentProfile.linkTypes %>
+            <ul class="link-urls">
+              <% talentProfile.linkTypes.zip(talentProfile.urlsForLinks).each do |link, url| %>
                 <li>
-                  <%= type %>
+                  <a class="<%= link.downcase %> <%= hoverColor %>" target="_blank" href="http://<%= url %>">
+                  </a>
                 </li>
               <% end %>
             </ul>
+          <% end %>
+
+          <% if talentProfile.socialMediaNumbers %>
             <ul class="media-types numbers">
               <% talentProfile.socialMediaNumbers.each do |type| %>
                 <li class="<%= hoverColor %>" style="color: <%= talentProfile.backgroundColor %>;">

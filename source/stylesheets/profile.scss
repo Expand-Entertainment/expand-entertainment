@@ -4,15 +4,12 @@
   .bio-section {
     display: block;
     margin-top: 60px;
-    @include bp('desktop') {
-      margin-top: 45px;
-    }
 
     .bio-wrapper {
       height: calc(100vh - 60px);
 
       @include bp('desktop') {
-        height: calc(100vh - 45px);
+        height: calc(100vh - 60px);
         display: flex;
         align-items: center;
       }
@@ -55,52 +52,52 @@
 
               &:hover {
                 &.rose {
-                  color: #C0686C
+                  fill: #C0686C;
                 }
                 &.blush-rose {
-                  color: #964447
+                  fill: #964447;
                 }
                 &.crimson {
-                  color: #721014
+                  fill: #721014;
                 }
                 &.carmine {
-                  color: #952221
+                  fill: #952221;
                 }
                 &.orange {
-                  color: #BB5827
+                  fill: #BB5827;
                 }
                 &.tangerine {
-                  color: #CB7329
+                  fill: #CB7329;
                 }
                 &.golden-rod {
-                  color: #D9A628
+                  fill: #D9A628;
                 }
                 &.lemon {
-                  color: #F7DA37
+                  fill: #F7DA37;
                 }
                 &.kermit {
-                  color: #146A3A
+                  fill: #146A3A;
                 }
                 &.hunter {
-                  color: #224337
+                  fill: #224337;
                 }
                 &.navy {
-                  color: #25295F
+                  fill: #25295F;
                 }
                 &.marine {
-                  color: #13648F
+                  fill: #13648F;
                 }
                 &.robin-egg {
-                  color: #7A99B3
+                  fill: #7A99B3;
                 }
                 &.deep-purple {
-                  color: #42174C
+                  fill: #42174C;
                 }
                 &.lilac {
-                  color: #9A799B
+                  fill: #9A799B;
                 }
                 &.lavender {
-                  color: #7A5BA6
+                  fill: #7A5BA6;
                 }
               }
             }
@@ -113,6 +110,7 @@
           }
 
           &.numbers {
+            opacity: 0;
             li {
               font-family: "akzidenz-grotesk-extended";
               font-size: 1em;
@@ -133,6 +131,7 @@
         }
 
         ul.media-types.metric {
+          opacity: 0;
           li {
             font-size: .675em;
             @include bp('desktop') {
@@ -143,12 +142,82 @@
         }
 
         ul.link-urls {
-          margin-bottom: 30px;
-          padding-top: 20px;
-          display: none;
-          @include bp('desktop') {
-            display: flex;
-            margin-bottom: 10px;
+          display: flex;
+          margin-bottom: 10px;
+
+          li a {
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: url('');
+            background-size: contain;
+            margin: 0 auto;
+
+            &.facebook {
+              background: url('/images/icons/Facebook.svg');
+              background-repeat: no-repeat;
+            }
+            &.googleplus {
+              background: url('/images/icons/Google-Plus.svg');
+              background-repeat: no-repeat;
+            }
+            &.homepage {
+              background: url('/images/icons/Homepage.svg');
+              background-repeat: no-repeat;
+            }
+            &.instagram {
+              background: url('/images/icons/Instagram.svg');
+              background-repeat: no-repeat;
+            }
+            &.musicly {
+              background: url('/images/icons/Music.ly.svg');
+              background-repeat: no-repeat;
+            }
+            &.pinterest {
+              background: url('/images/icons/Pinterest.svg');
+              background-repeat: no-repeat;
+            }
+            &.snapchat {
+              background: url('/images/icons/Snapchat.svg');
+              background-repeat: no-repeat;
+            }
+            &.soundcloud {
+              background: url('/images/icons/Soundcloud.svg');
+              background-repeat: no-repeat;
+            }
+            &.spotify {
+              background: url('/images/icons/Spotify.svg');
+              background-repeat: no-repeat;
+            }
+            &.tumblr {
+              background: url('/images/icons/Tumblr.svg');
+              background-repeat: no-repeat;
+            }
+            &.twitch {
+              background: url('/images/icons/Twitch.svg');
+              background-repeat: no-repeat;
+            }
+            &.twitter {
+              background: url('/images/icons/Twitter.svg');
+              background-repeat: no-repeat;
+            }
+            &.vimeo {
+              background: url('/images/icons/Vimeo.svg');
+              background-repeat: no-repeat;
+            }
+            &.youtube {
+              background: url('/images/icons/YouTube.svg');
+              background-repeat: no-repeat;
+            }
+          }
+        }
+
+        &.show-metrics {
+          ul.media-types {
+            &.numbers,
+            &.metric {
+              opacity: 1;
+            }
           }
         }
       }
@@ -168,7 +237,7 @@
           position: fixed;
           left: 0;
           right: 0;
-          top: 0;
+          top: 80px;
           height: 100%;
           width: 100%;
           object-fit: cover;
@@ -232,9 +301,9 @@
             background: white;
             position: static;
             color: #000;
-            margin: 8px auto 10px auto;
+            margin: 8px auto 30px auto;
             text-align: center;
-            padding: 0;
+            padding: 0 30px;
             opacity: 1;
           }
 
@@ -308,7 +377,6 @@
       .bio-name {
         background: white;
         width: 100%;
-        height: 55%;
         position: relative;
         z-index: 999;
         display: flex;
@@ -328,6 +396,7 @@
           line-height: 1.5em;
           padding-left: .9em;
           padding-top: 20px;
+          margin-bottom: 20px;
           width: 100%;
         }
 

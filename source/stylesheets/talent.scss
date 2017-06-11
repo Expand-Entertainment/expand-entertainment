@@ -3,6 +3,7 @@
 .content.talent {
   display: flex;
   flex-direction: column;
+  clear: both;
 
   .right-toggle {
     width: 100%;
@@ -23,10 +24,9 @@
   }
 
   .container {
-    padding-top: 59px;
+    margin-top: 60px;
     width: 100%;
     @include bp('desktop') {
-      margin-top: 0;
       padding: 0;
       width: 100%;
     }
@@ -35,7 +35,7 @@
       align-items: center;
       display: flex;
       flex-wrap: wrap;
-      height: calc(100vh - 45px);
+      height: calc(100vh - 60px);
       width: 100%;
 
       h2 {
@@ -45,13 +45,13 @@
 
       &.for-grid {
         @include bp('desktop') {
-          width: 85%;
+          width: 100%;
         }
       }
     }
 
     .row.for-grid .grid-item {
-      height: calc(100% - 58px);
+      height: calc(100% - 60px);
       position: relative;
       width: 100%;
       @include bp('desktop') {
@@ -151,13 +151,13 @@
       }
 
       h2 {
-        font-size: .875em;
+        font-size: .75em;
         letter-spacing: .75em;
         text-transform: uppercase;
         line-height: 1.5em;
         @include transition(all, .325s, ease-in-out);
         @include bp('desktop') {
-          font-size: .875em;
+          font-size: 1em;
           letter-spacing: .25em;
         }
       }
@@ -226,14 +226,14 @@
     }
 
     &.grid {
+
       .row.for-grid {
         display: flex;
         align-items: flex-start;
         position: relative;
         z-index: 99999;
-        @include bp('desktop') {
-          margin-top: 45px;
-        }
+        flex-wrap: wrap;
+        overflow: scroll;
       }
       .row.for-list { display: none; }
     }

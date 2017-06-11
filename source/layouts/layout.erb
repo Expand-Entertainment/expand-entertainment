@@ -12,36 +12,32 @@
     <script>try{Typekit.load({ async: false });}catch(e){}</script>
   </head>
   <body id="body" class="<%= page_classes %>">
-
     <header id="header" class="header">
-      <div class="mobile-links">
-        <div class="left">
-          <%= link_to 'talent', '/talent.html', :class => 'page-link talent' %>
-          <%= link_to 'about', '/about.html', :class => 'page-link about' %>
-        </div>
+      <div class="main-links">
 
-        <div class="logos">
-          <a class="wordmark-home desktop">
-            <%= image_tag 'expand-wordmark.svg', :class => 'wordmark'%>
-          </a>
-
-          <a id="toggle-button" href="/" class="layered-logo list">
-            <%= image_tag '1-logo-purple.svg', :class => 'logo-layer'%>
-            <%= image_tag '2-logo-blue.svg', :class => 'logo-layer'%>
-            <%= image_tag '3-logo-green.svg', :class => 'logo-layer'%>
-            <%= image_tag '4-logo-yellow.svg', :class => 'logo-layer'%>
-            <%= image_tag '5-logo-orange.svg', :class => 'logo-layer'%>
-            <%= image_tag '6-logo-red.svg', :class => 'logo-layer'%>
-          </a>
-        </div>
-
-        <div class="right">
-          <%= link_to 'creative', '/creative.html', :class => 'page-link creative' %>
-          <%= link_to 'contact', '/contact.html', :class => 'page-link contact' %>
-        </div>
+        <div class="link"><%= link_to 'creators', '/talent.html', :class => 'page-link talent' %></div>
+        <div class="link"><%= link_to 'about', '/about.html', :class => 'page-link about' %></div>
+        <div class="link home"><%= link_to 'exe', '/', :class => 'page-link' %></div>
+        <div class="link"><%= link_to 'projects', '/creative.html', :class => 'page-link creative' %></div>
+        <div class="link"><%= link_to 'contact', '/contact.html', :class => 'page-link contact' %></div>
       </div>
+      <div data-behavior="toggle-pages" class="logo-container">
+        <div class="amoeba">
+          <%= image_tag '1-logo-purple.svg', :class => 'logo-layer'%>
+          <%= image_tag '2-logo-blue.svg', :class => 'logo-layer'%>
+          <%= image_tag '3-logo-green.svg', :class => 'logo-layer'%>
+          <%= image_tag '4-logo-yellow.svg', :class => 'logo-layer'%>
+          <%= image_tag '5-logo-orange.svg', :class => 'logo-layer'%>
+          <%= image_tag '6-logo-red.svg', :class => 'logo-layer'%>
+        </div>
+        <div class="note">click to expand</div>
+      </div>
+      <a class="wordmark-wrapper">
+        <%= image_tag 'expand-wordmark.svg', :class => 'wordmark'%>
+      </a>
     </header>
     <%= yield %>
+    <footer>2017 Expand Entertainment, LLC</footer>
   </body>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -52,6 +48,7 @@
   <%= javascript_include_tag "site" %>
   <script>$(function($){ Expand.initialize(); });</script>
   <script type="text/javascript">
+
     var visited = $.cookie("visited")
     if (visited == null) {
       $(".logo").addClass("fade-in");

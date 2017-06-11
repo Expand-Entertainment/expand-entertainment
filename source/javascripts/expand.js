@@ -15,23 +15,7 @@ var Expand = {
         Expand.resizeHandler();
       });
 
-      var butt = document.getElementById('toggle-button');
-      var logoButton = new Hammer(butt);
-      logoButton.on("tap", function(event) {
-        if ($('body').hasClass('talent')) {
-          Expand.toggleTalent();
-        }
-        if ($('body').hasClass('about')) {
-          Expand.toggleAbout();
-
-        }
-        if ($('body').hasClass('contact')) {
-          Expand.toggleContact();
-        }
-      });
-
-
-      $('[data-behavior="toggle-talent"]').click(function() {
+      $('[data-behavior="toggle-pages"]').click(function() {
         if ($('body').hasClass('talent')) {
           Expand.toggleTalent();
         }
@@ -41,29 +25,21 @@ var Expand = {
         if ($('body').hasClass('contact')) {
           Expand.toggleContact();
         }
-      });
-
-
-      if ($('body').hasClass('talent') || $('body').hasClass('about')  || $('body').hasClass('contact')) {
-        $("a.layered-logo").removeAttr("href");
-      }
-
-      $(window).scroll(function() {
-
+        if ($('body').hasClass('profile')) {
+          Expand.toggleMetrics();
+        }
       });
     },
 
     resizeHandler: function(e) {
       if (window.innerWidth > 768) {
-        console.log('resize');
         $("#homepage").one('mousemove', function(e) {
           Expand.expandLinks();
           $(".talent").animate({left: '0', top: '0'}, 560);
           $(".about").animate({right: '0', top: '0'}, 560);
           $(".creative").animate({left: '0', bottom: '0'}, 560);
           $(".contact").animate({right: '0', bottom: '0'}, 560);
-          $(".layered-logo").addClass("logo-expanded");
-          $(".tagline").fadeIn(650);
+          $(".tagline").delay(800).fadeIn(650);
         });
       } else {
         if ($('body').hasClass('index')) {
@@ -72,26 +48,32 @@ var Expand = {
           $(".about").animate({right: '0', top: '0'}, 400);
           $(".creative").animate({left: '0', bottom: '0'}, 400);
           $(".contact").animate({right: '0', bottom: '0'}, 400);
-          $(".layered-logo").addClass("logo-expanded");
         }
       }
     },
 
     toggleTalent: function() {
       $("div.talent-container").toggleClass("grid");
-      $('.layered-logo').toggleClass('logo-expanded');
+      $('.amoeba').toggleClass('amoeba-open');
+      $('.logo-container').toggleClass('active');
     },
 
     toggleAbout: function() {
       $("div.info-page").toggleClass("show-bios");
-      $('.layered-logo').toggleClass('logo-expanded');
+      $('.amoeba').toggleClass('amoeba-open');
+      $('.logo-container').toggleClass('active');
     },
 
     toggleContact: function() {
       $("div.info-page").toggleClass("show-map");
-      $('.layered-logo').toggleClass('logo-expanded');
+      $('.amoeba').toggleClass('amoeba-open');
+      $('.logo-container').toggleClass('active');
     },
-
+    toggleMetrics: function() {
+      $(".specs").toggleClass("show-metrics");
+      $('.amoeba').toggleClass('amoeba-open');
+      $('.logo-container').toggleClass('active');
+    },
     expandLinks: function(e) {
       $('#home-container').addClass('expanded');
     }
