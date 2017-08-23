@@ -140,7 +140,56 @@
             }
           }
         }
-
+        ul.media-types.numbers li {
+          &.rose {
+            color: #C0686C;
+          }
+          &.blush-rose {
+            color: #964447;
+          }
+          &.crimson {
+            color: #721014;
+          }
+          &.carmine {
+            color: #952221;
+          }
+          &.orange {
+            color: #BB5827;
+          }
+          &.tangerine {
+            color: #CB7329;
+          }
+          &.golden-rod {
+            color: #D9A628;
+          }
+          &.lemon {
+            color: #F7DA37;
+          }
+          &.kermit {
+            color: #146A3A;
+          }
+          &.hunter {
+            color: #224337;
+          }
+          &.navy {
+            color: #25295F;
+          }
+          &.marine {
+            color: #13648F;
+          }
+          &.robin-egg {
+            color: #7A99B3;
+          }
+          &.deep-purple {
+            color: #42174C;
+          }
+          &.lilac {
+            color: #9A799B;
+          }
+          &.lavender {
+            color: #7A5BA6;
+          }
+        }
         ul.link-urls {
           display: flex;
           margin-bottom: 10px;
@@ -320,6 +369,7 @@
           }
 
           a {
+            color:inherit;
             cursor: pointer;
           }
 
