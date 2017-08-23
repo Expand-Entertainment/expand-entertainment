@@ -81,6 +81,18 @@ header {
           font-size: .8675em;
           padding-bottom: 5px;
         }
+        &.about {
+          margin-left: -28px;
+          @include bp('desktop') {
+            margin-left: 0;
+          }
+        }
+        &.creative {
+          margin-left: 28px;
+          @include bp('desktop') {
+            margin-left: 0;
+          }
+        }
 
         &.talent:hover {
           border-bottom: 2px solid #7A99B3;

@@ -17,21 +17,21 @@
 
         <div class="link"><%= link_to 'creators', '/talent.html', :class => 'page-link talent' %></div>
         <div class="link"><%= link_to 'about', '/about.html', :class => 'page-link about' %></div>
-        <div class="link home"><%= link_to 'exe', '/', :class => 'page-link' %></div>
+        <div data-behavior="toggle-pages" class="logo-container">
+          <div class="amoeba">
+            <%= image_tag '1-logo-purple.svg', :class => 'logo-layer'%>
+            <%= image_tag '2-logo-blue.svg', :class => 'logo-layer'%>
+            <%= image_tag '3-logo-green.svg', :class => 'logo-layer'%>
+            <%= image_tag '4-logo-yellow.svg', :class => 'logo-layer'%>
+            <%= image_tag '5-logo-orange.svg', :class => 'logo-layer'%>
+            <%= image_tag '6-logo-red.svg', :class => 'logo-layer'%>
+          </div>
+          <div class="note">click to expand</div>
+        </div>
         <div class="link"><%= link_to 'projects', '/creative.html', :class => 'page-link creative' %></div>
         <div class="link"><%= link_to 'contact', '/contact.html', :class => 'page-link contact' %></div>
       </div>
-      <div data-behavior="toggle-pages" class="logo-container">
-        <div class="amoeba">
-          <%= image_tag '1-logo-purple.svg', :class => 'logo-layer'%>
-          <%= image_tag '2-logo-blue.svg', :class => 'logo-layer'%>
-          <%= image_tag '3-logo-green.svg', :class => 'logo-layer'%>
-          <%= image_tag '4-logo-yellow.svg', :class => 'logo-layer'%>
-          <%= image_tag '5-logo-orange.svg', :class => 'logo-layer'%>
-          <%= image_tag '6-logo-red.svg', :class => 'logo-layer'%>
-        </div>
-        <div class="note">click to expand</div>
-      </div>
+
       <a class="wordmark-wrapper">
         <%= image_tag 'expand-wordmark.svg', :class => 'wordmark'%>
       </a>

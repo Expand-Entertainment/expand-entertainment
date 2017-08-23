@@ -3,20 +3,21 @@
   cursor: pointer;
   position: absolute;
   right: 0px;
-  top: 3px;
-  left: 14px;
+  top: 6px;
+  left: 9px;
   margin: 0 auto;
   width: 30px;
   z-index: 999;
   @include bp('desktop') {
-    right: 20px;
     width: 40px;
-    top: 8px;
-    left: auto;
+    top: -25px;
+    left: 5px;
+    position: relative;
     margin: 0;
   }
 
   .amoeba {
+    @include transition(all, .325s, ease-in);
     img {
       position: absolute;
       margin-top: 6px;
@@ -56,6 +57,8 @@
     }
 
     &.amoeba-open {
+      margin-left: 10px;
+      @include transition(all, .325s, ease-in);
       img {
         margin-left: -46px;
         margin-top: 0 !important;
