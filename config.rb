@@ -4,6 +4,7 @@ activate :contentful do |f|
   f.access_token = ENV['CONTENTFUL_API_KEY']
   f.rebuild_on_webhook = true
   f.content_types = { talentProfile: 'talentProfile', contact: 'contact', about: 'about', creative: 'creative' }
+  f.cda_query = {order: 'sys.updatedAt' }
 end
 
 if data.respond_to? :website
