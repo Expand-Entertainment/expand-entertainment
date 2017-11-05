@@ -16,7 +16,7 @@ var Expand = {
       });
 
       $('[data-behavior="toggle-pages"]').click(function() {
-        if ($('body').hasClass('talent')) {
+        if ($('body').hasClass('talent') || $('body').hasClass('projects')) {
           Expand.toggleTalent();
         }
         if ($('body').hasClass('about')) {
@@ -55,27 +55,26 @@ var Expand = {
 
     toggleTalent: function() {
       $("div.talent-container").toggleClass("grid");
-      $('.amoeba').toggleClass('amoeba-open');
-      $('.logo-container').toggleClass('active');
+      Expand.toggleAmoeba();
     },
 
     toggleAbout: function() {
       $("div.info-page").toggleClass("show-bios");
-      $('.amoeba').toggleClass('amoeba-open');
-      $('.logo-container').toggleClass('active');
+      Expand.toggleAmoeba();
     },
 
     toggleContact: function() {
       $("div.info-page").toggleClass("show-map");
-      $('.amoeba').toggleClass('amoeba-open');
-      $('.logo-container').toggleClass('active');
+      Expand.toggleAmoeba();
     },
     toggleMetrics: function() {
       $(".specs").toggleClass("show-metrics");
-      $('.amoeba').toggleClass('amoeba-open');
-      $('.logo-container').toggleClass('active');
     },
     expandLinks: function(e) {
       $('#home-container').addClass('expanded');
+    },
+    toggleAmoeba: function() {
+      $('.amoeba').toggleClass('amoeba-open');
+      $('.logo-container').toggleClass('active');
     }
 };

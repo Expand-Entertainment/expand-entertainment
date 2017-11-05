@@ -1,6 +1,7 @@
 @import "mix";
 
 .info-page {
+
   .bio-section {
     display: none;
   }
@@ -26,6 +27,11 @@
   strong { font-weight: 700 !important; }
 
   &.show-bios {
+    .border-el {
+      left: 0;
+      width: 100%;
+    }
+
     .text {
       display: none;
     }
@@ -42,6 +48,7 @@
         font-family: "akzidenz-grotesk-extended";
         font-weight: 700;
         text-align: center;
+        margin-top: 25px;
         margin-bottom: 30px;
         position: absolute;
         left: 0;
@@ -116,7 +123,7 @@
               font-family: "akzidenz-grotesk-extended";
               text-transform: uppercase;
               letter-spacing: .9em;
-              font-size: 1em;
+              font-size: 1.5em;
               line-height: 1.5em;
               padding-left: .9em;
               text-align: center;
@@ -124,7 +131,7 @@
           }
 
           p {
-            padding: 30px 20px 100px 20px;
+            padding: 30px 20px 50px 20px;
             background: rgba(0,0,0,.6);
             font-family: "akzidenz-grotesk";
             line-height: 1.4em;
