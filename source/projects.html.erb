@@ -1,0 +1,31 @@
+---
+title: Talent Landing
+---
+
+<div class="content talent projects">
+  <div class="container talent-container">
+    <div class="row for-grid">
+      <% entries = data.website.projects.to_a.sort_by{ |id, e| e['orderNumber'] } %>
+      <% entries.each do |id, talentProfile| %>
+        <a id="<%= talentProfile['slug'] %>" href="projects/<%= talentProfile['slug'] %>.html" class="grid-item">
+          <h2><%= talentProfile['fullName'] %></h2>
+          <div class="profile-image">
+            <img src=<%= talentProfile.mainImage['url'] %> />
+          </div>
+        </a>
+      <% end %>
+    </div>
+
+    <div class="row for-list">
+      <% entries = data.website.projects.to_a.sort_by{ |id, e| e['orderNumber'] } %>
+      <% entries.each do |id, talentProfile| %>
+      <% color = talentProfile.backgroundColor %>
+        <div data-aos-delay="200" data-aos="zoom-in-right" data-aos-offset="80" data-aos-easing="linear" data-aos-duration="400">
+          <a href="projects/<%= talentProfile['slug'] %>.html" class="grid-item <%= color %>">
+            <h2><%= talentProfile['fullName'] %></h2>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,15 +1,27 @@
+# 
+
 
 activate :contentful do |f|
   f.space = { website: 'dtr3t57nrpyu'}
-  f.access_token = ENV['CONTENTFUL_API_KEY']
+  f.access_token = 'b072a17b401ec160ca2c8183f87901b962de05925402f85db5d0f966c0bf25d0'
   f.rebuild_on_webhook = true
-  f.content_types = { talentProfile: 'talentProfile', contact: 'contact', about: 'about', creative: 'creative' }
+  f.content_types = { 
+    talentProfile: 'talentProfile', 
+    contact: 'contact', 
+    about: 'about', 
+    creative: 'creative',
+    projects: 'projects' 
+  }
   f.cda_query = {order: 'sys.updatedAt' }
 end
 
 if data.respond_to? :website
   data.website.talentProfile.each do |id, talentProfile|
     proxy "profile/#{talentProfile.slug}.html", "profile/talent-detail.html", :locals => { :talentProfile => talentProfile }, :ignore => true
+  end
+
+  data.website.projects.each do |id, project|
+    proxy "projects/#{project.slug}.html", "project/project-detail.html", :locals => { :talentProfile => project }, :ignore => true
   end
 end
 

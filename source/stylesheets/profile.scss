@@ -1,15 +1,23 @@
 @import "mix";
+.projects, 
 .profile {
+  @include bp('desktop') {
+    padding-top: 70px;
+  }
 
   .bio-section {
     display: block;
 
+    @include bp('desktop') {
+      height: calc(100vh - 100px);
+      overflow: hidden;
+    }
+
     .bio-wrapper {
       height: calc(100vh - 50px);
-      margin-top: 50px;
 
       @include bp('desktop') {
-        height: calc(100vh - 70px);
+        height: 100%;
         display: flex;
         align-items: center;
       }
@@ -17,6 +25,7 @@
       &.for-mobile {
         background: white;
         height: 20vh;
+
         @include bp('desktop') {
           display: none;
         }

@@ -1,5 +1,11 @@
 <div class="info-page">
   <% data.website.creative.each do |id, text| %>
     <h2><%= text['creativePageText'] %></h2>
+    <a id="<%= text['slug'] %>" href="profile/<%= text['slug'] %>.html" class="grid-item">
+          <h2><%= text['fullName'] %></h2>
+          <div class="profile-image">
+            <img src=<%= text.mainImage['url'] %> />
+          </div>
+        </a>
   <% end %>
 </div>
