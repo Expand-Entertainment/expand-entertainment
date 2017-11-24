@@ -25,9 +25,6 @@ var Expand = {
         if ($('body').hasClass('contact')) {
           Expand.toggleContact();
         }
-        if ($('body').hasClass('profile')) {
-          Expand.toggleMetrics();
-        }
       });
     },
 
@@ -66,9 +63,6 @@ var Expand = {
     toggleContact: function() {
       $("div.info-page").toggleClass("show-map");
       Expand.toggleAmoeba();
-    },
-    toggleMetrics: function() {
-      $(".specs").toggleClass("show-metrics");
     },
     expandLinks: function(e) {
       $('#home-container').addClass('expanded');
