@@ -46,7 +46,7 @@
     width: 100%;
 
     a {
-      border-bottom: 4px solid #ffffff;
+      border-bottom: 4px solid transparent;
       font-family: "akzidenz-grotesk-extended";
       cursor: pointer;
       position: absolute;
@@ -57,7 +57,8 @@
       letter-spacing: .09em;
       font-size: .875em;
       padding-bottom: 8px;
-        @include transition(all, .225s, ease-in-out);
+      @include transition(all, .225s, ease-in-out);
+
       @include bp('desktop') {
         font-size: 1.125em;
       }
@@ -66,7 +67,7 @@
       top: calc(40%);
       left: calc(50% - 50px);
       &:hover {
-        border-bottom: 4px solid #9A799B;
+        border-bottom-color: #9A799B;
         @include transition(all, .225s, ease-in-out);
       }
     }
@@ -74,7 +75,7 @@
       top: calc(40% + 20px);
       left: calc(50% - 20px);
       &:hover {
-        border-bottom: 4px solid #25295F;
+        border-bottom-color:#25295F;
         @include transition(all, .225s, ease-in-out);
       }
     }
@@ -82,7 +83,7 @@
       top: calc(40% + 40px);
       left: calc(50% - 65px);
       &:hover {
-        border-bottom: 4px solid #C0686C;
+        border-bottom-color: #C0686C;
         @include transition(all, .225s, ease-in-out);
       }
     }
@@ -90,7 +91,7 @@
       top: calc(40% + 60px);
       left: calc(50% - 20px);
       &:hover {
-        border-bottom: 4px solid #146A3A;
+        border-bottom-color: #146A3A;
         @include transition(all, .225s, ease-in-out);
       }
     }
